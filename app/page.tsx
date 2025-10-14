@@ -5,7 +5,7 @@ import { ArrowRight, Phone, Mail, MapPin, CheckCircle, Users, TrendingUp, Shield
 
 const PACConsulting = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openFaq, setOpenFaq] = useState(null);
+  const [openFaq, setOpenFaq] = useState<number|null>(null);
 
   const services = [
     {
@@ -328,7 +328,7 @@ const PACConsulting = () => {
               <div key={index} className="bg-white rounded-xl border border-gray-200 overflow-hidden">
                 <button
                   className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
-                  onClick={() => setOpenFaq(openFaq === index ? 0 : index)}
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
                 >
                   <span className="text-lg font-semibold text-gray-900">{faq.question}</span>
                   <ChevronDown className={`w-5 h-5 text-gray-500 transition-transform ${openFaq === index ? 'rotate-180' : ''}`} />
