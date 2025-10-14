@@ -349,7 +349,7 @@ const PACConsulting = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Take the Next Step?</h2>
           <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-            Whether you're ready to sell your business or secure the capital you need to grow, we're here to help you succeed.
+            Whether you&apos;re ready to sell your business or secure the capital you need to grow, we&apos;re here to help you succeed.
           </p>
           <button className="bg-white text-blue-600 px-10 py-4 rounded-lg hover:bg-gray-100 transition-colors font-bold text-lg inline-flex items-center group">
             Schedule Your Discovery Call
