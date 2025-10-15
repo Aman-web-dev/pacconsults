@@ -16,18 +16,18 @@ export default function ChatWidget() {
   const panelRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
-    function onKey(e: KeyboardEvent) {
+    const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsOpen(false);
-    }
+    };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
   React.useEffect(() => {
-    function onClickOutside(e: MouseEvent) {
+    const onClickOutside = (e: MouseEvent) => {
       if (!panelRef.current) return;
       if (!panelRef.current.contains(e.target as Node) && isOpen) setIsOpen(false);
-    }
+    };
     if (isOpen) document.addEventListener("mousedown", onClickOutside);
     return () => document.removeEventListener("mousedown", onClickOutside);
   }, [isOpen]);
@@ -46,33 +46,19 @@ export default function ChatWidget() {
     setIsSending(true);
 
     try {
-      const res = await fetch("/api/chat", {
+      const res = await fetch("https://api.workdone247.com/ask", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          messages: [...messages, userMessage].map(({ role, content }) => ({
-            role,
-            content,
-          })),
-        }),
+        body: JSON.stringify({ question: userMessage.content }),
       });
 
-      if (!res.ok || !res.body) throw new Error(`Request failed: ${res.status}`);
+      if (!res.ok) throw new Error(`Request failed: ${res.status}`);
+      const data = await res.json();
 
-      const reader = res.body.getReader();
-      const decoder = new TextDecoder();
-      let assistantText = "";
-      const assistantId = `${Date.now()}-a`;
-      setMessages((m) => [...m, { id: assistantId, role: "assistant", content: "" }]);
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        assistantText += decoder.decode(value, { stream: true });
-        setMessages((m) =>
-          m.map((msg) => (msg.id === assistantId ? { ...msg, content: assistantText } : msg))
-        );
-      }
+      setMessages((m) => [
+        ...m,
+        { id: `${Date.now()}-a`, role: "assistant", content: data.response },
+      ]);
     } catch {
       setMessages((m) => [
         ...m,
@@ -87,19 +73,10 @@ export default function ChatWidget() {
     <>
       <style jsx global>{`
         @keyframes wobble {
-          0%,
-          100% {
-            transform: rotate(0deg) scale(1);
-          }
-          25% {
-            transform: rotate(-10deg) scale(1.05);
-          }
-          50% {
-            transform: rotate(10deg) scale(1.05);
-          }
-          75% {
-            transform: rotate(-5deg) scale(1.02);
-          }
+          0%, 100% { transform: rotate(0deg) scale(1); }
+          25% { transform: rotate(-10deg) scale(1.05); }
+          50% { transform: rotate(10deg) scale(1.05); }
+          75% { transform: rotate(-5deg) scale(1.02); }
         }
 
         .pc-chat-launcher {
@@ -118,7 +95,6 @@ export default function ChatWidget() {
           animation: wobble 3s infinite ease-in-out;
           transition: all 0.3s ease;
         }
-
         .pc-chat-launcher:hover {
           transform: scale(1.15) rotate(10deg);
           box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
@@ -128,7 +104,7 @@ export default function ChatWidget() {
           position: fixed;
           bottom: 110px;
           right: 30px;
-          width: 380px;
+          width: 400px;
           max-height: 600px;
           display: flex;
           flex-direction: column;
@@ -142,14 +118,8 @@ export default function ChatWidget() {
         }
 
         @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
         .pc-chat-header {
@@ -180,12 +150,10 @@ export default function ChatWidget() {
           max-width: 80%;
           word-wrap: break-word;
         }
-
         .pc-chat-user {
           align-self: flex-end;
           background: linear-gradient(135deg, #3b82f6, #60a5fa);
         }
-
         .pc-chat-assistant {
           align-self: flex-start;
           background: rgba(255, 255, 255, 0.15);
@@ -198,7 +166,6 @@ export default function ChatWidget() {
           border-top: 1px solid rgba(255, 255, 255, 0.2);
           background: rgba(0, 0, 0, 0.3);
         }
-
         .pc-chat-input {
           flex: 1;
           padding: 10px 14px;
@@ -207,7 +174,6 @@ export default function ChatWidget() {
           outline: none;
           background: rgba(255, 255, 255, 0.8);
         }
-
         .pc-chat-send {
           margin-left: 8px;
           background: linear-gradient(135deg, #3b82f6, #9333ea);
@@ -219,12 +185,10 @@ export default function ChatWidget() {
           cursor: pointer;
           transition: 0.3s;
         }
-
         .pc-chat-send:hover {
           opacity: 0.9;
           transform: scale(1.05);
         }
-
         .pc-chat-close {
           font-size: 22px;
           color: white;
