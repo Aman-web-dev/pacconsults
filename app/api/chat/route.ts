@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
 		const auth = req.headers.get("authorization");
 		if (auth) headers["authorization"] = auth;
 
-		const response = await fetch(`${backendUrl}/chat`, {
+		const response = await fetch(`${backendUrl}/ask`, {
 			method: "POST",
 			headers,
 			body,
