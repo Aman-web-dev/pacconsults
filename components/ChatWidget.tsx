@@ -62,7 +62,7 @@ export default function ChatWidget() {
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
       let assistantText = "";
-      let assistantId = `${Date.now()}-a`;
+      const assistantId = `${Date.now()}-a`;
       setMessages((m) => [...m, { id: assistantId, role: "assistant", content: "" }]);
 
       while (true) {
