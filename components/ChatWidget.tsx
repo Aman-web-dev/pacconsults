@@ -94,6 +94,7 @@ export default function ChatWidget() {
           cursor: pointer;
           animation: wobble 3s infinite ease-in-out;
           transition: all 0.3s ease;
+          z-index: 9999;
         }
         .pc-chat-launcher:hover {
           transform: scale(1.15) rotate(10deg);
@@ -115,6 +116,7 @@ export default function ChatWidget() {
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
           overflow: hidden;
           animation: fadeIn 0.3s ease-in-out;
+          z-index: 9998;
         }
 
         @keyframes fadeIn {
@@ -195,6 +197,30 @@ export default function ChatWidget() {
           background: transparent;
           border: none;
           cursor: pointer;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 600px) {
+          .pc-chat-panel {
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            max-height: 100%;
+            border-radius: 0;
+          }
+          .pc-chat-messages {
+            font-size: 14px;
+          }
+          .pc-chat-inputrow {
+            padding: 8px;
+          }
+          .pc-chat-input {
+            padding: 8px;
+            font-size: 14px;
+          }
+          .pc-chat-send {
+            padding: 8px 12px;
+          }
         }
       `}</style>
 
