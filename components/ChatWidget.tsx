@@ -46,7 +46,7 @@ export default function ChatWidget() {
     setIsSending(true);
 
     try {
-      const res = await fetch("https://api.workdone247.com/ask", {
+      const res = await fetch("https://pac.mangoground-36b586c2.westus2.azurecontainerapps.io/ask", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ question: userMessage.content }),

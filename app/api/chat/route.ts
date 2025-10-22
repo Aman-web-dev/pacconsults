@@ -30,8 +30,11 @@ export async function OPTIONS(req: NextRequest) {
 export async function POST(req: NextRequest) {
 	try {
 		const backendUrl = getBackendUrl();
-		// Pass through the request body as-is to the backend
+		console.log('Backend URL:', backendUrl); // For debugging
+		
+		// Parse and validate the request body
 		const body = await req.text();
+		console.log('Received request body:', body); // For debugging
 
 		// Forward headers selectively
 		const headers: Record<string, string> = {
