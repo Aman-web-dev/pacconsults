@@ -98,7 +98,7 @@ export default function AdminDashboardPage() {
                   <BarChartIcon className="h-8 w-8 text-yellow-500" />
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-gray-700 text-base">Monitor your website's performance and traffic.</CardDescription>
+                  <CardDescription className="text-gray-700 text-base">Monitor your website&apos;s performance and traffic.</CardDescription>
                   <p className="text-sm text-gray-500 mt-2">Gain insights into user behavior.</p>
                 </CardContent>
               </Card>

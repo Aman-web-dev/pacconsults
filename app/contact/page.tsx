@@ -40,7 +40,7 @@ export default function ContactPage() {
     <div className="container mx-auto p-8">
       <h1 className="text-4xl font-bold mb-6 text-gray-900">Contact Us</h1>
       <p className="text-lg text-gray-700 mb-8">
-        We'd love to hear from you! Please fill out the form below or reach out to us directly.
+        We&apos;d love to hear from you! Please fill out the form below or reach out to us directly.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
