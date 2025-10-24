@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { Button } from '../../../components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../../components/ui/table';
 import { Badge } from '../../../components/ui/badge';
+import { Download } from 'lucide-react'; // Import icon for download button
 import {
   AlertDialog,
   AlertDialogAction,
@@ -89,6 +90,38 @@ export default function AdminLeadsPage() {
     }
   };
 
+  const downloadLeadsCsv = () => {
+    if (leads.length === 0) {
+      alert('No leads to download.');
+      return;
+    }
+
+    const headers = ['ID', 'Name', 'Email', 'Phone', 'Status', 'Source', 'Created At'];
+    const csvRows = [
+      headers.join(','),
+      ...leads.map(lead =>
+        [
+          `"${lead.id}"`,
+          `"${lead.name}"`,
+          `"${lead.email}"`,
+          `"${lead.phone || ''}"`,
+          `"${lead.status}"`,
+          `"${lead.source || ''}"`,
+          `"${new Date(lead.created_at).toLocaleDateString()}"`,
+        ].join(',')
+      ),
+    ];
+
+    const csvString = csvRows.join('\n');
+    const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.setAttribute('download', 'leads.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const getStatusBadgeVariant = (status: Lead['status']) => {
     switch (status) {
       case 'new':
@@ -116,9 +149,17 @@ export default function AdminLeadsPage() {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold text-gray-900">Leads Management</h1>
-        <Link href="/admin/leads/new" passHref>
-          <Button>Add New Lead</Button>
-        </Link>
+        <div className="flex space-x-2">
+          <Button onClick={downloadLeadsCsv} variant="outline">
+            <Download className="mr-2 h-4 w-4" /> Download CSV
+          </Button>
+          <Button onClick={() => alert('Generate Leads functionality will be implemented here.')} variant="secondary">
+            Generate Leads
+          </Button>
+          <Link href="/admin/leads/new" passHref>
+            <Button>Add New Lead</Button>
+          </Link>
+        </div>
       </div>
 
       {leads.length === 0 ? (

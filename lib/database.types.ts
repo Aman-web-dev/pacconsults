@@ -8,6 +8,7 @@ export type Database = {
           title: string;
           content: string;
           is_published: boolean;
+          image_url?: string | null; // Added image_url field
         };
         Insert: {
           id?: string;
@@ -15,6 +16,7 @@ export type Database = {
           title: string;
           content: string;
           is_published?: boolean;
+          image_url?: string | null; // Added image_url field
         };
         Update: {
           id?: string;
@@ -22,6 +24,7 @@ export type Database = {
           title?: string;
           content?: string;
           is_published?: boolean;
+          image_url?: string | null; // Added image_url field
         };
       };
       leads: {

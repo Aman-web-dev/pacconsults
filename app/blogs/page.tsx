@@ -1,75 +1,76 @@
-// app/blogs/page.tsx
-// This page displays a public listing of published blogs from PAC Consultants.
-
-'use client';
-
-import { useEffect, useState } from 'react';
-import { supabase } from '../../lib/supabaseClient';
+import { supabase } from '@/lib/supabaseClient';
 import Link from 'next/link';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../components/ui/card';
-import { Button } from '../../components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import Image from 'next/image';
 
-interface Blog {
-  id: string;
-  title: string;
-  content: string;
-  author: string;
-  status: 'draft' | 'published';
-  created_at: string;
-}
-
-export default function PublicBlogsPage() {
-  const [blogs, setBlogs] = useState<Blog[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    fetchPublishedBlogs();
-  }, []);
-
-  const fetchPublishedBlogs = async () => {
-    setLoading(true);
-    const { data, error } = await supabase
-      .from('blogs')
-      .select('*')
-      .eq('status', 'published') // Only fetch published blogs for the public view
-      .order('created_at', { ascending: false });
-
-    if (error) {
-      setError(error.message);
-      setBlogs([]);
-    } else {
-      setBlogs(data || []);
-    }
-    setLoading(false);
-  };
-
-  if (loading) {
-    return <div className="text-center py-8">Loading blogs...</div>;
-  }
+// This function fetches data at build time
+export async function generateStaticParams() {
+  const { data: blogs, error } = await supabase
+    .from('blogs')
+    .select('id')
+    .eq('is_published', true);
 
   if (error) {
-    return <div className="text-center py-8 text-red-600">Error: {error}</div>;
+    console.error('Error fetching blog IDs for static paths:', error);
+    return [];
   }
 
+  return blogs.map((blog) => ({
+    id: blog.id,
+  }));
+}
+
+async function getPublishedBlogs() {
+  const { data: blogs, error } = await supabase
+    .from('blogs')
+    .select('*')
+    .eq('is_published', true)
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    console.error('Error fetching published blogs:', error);
+    return [];
+  }
+  return blogs;
+}
+
+export default async function BlogListPage() {
+  const blogs = await getPublishedBlogs();
+
   return (
-    <div className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-8 text-gray-900 text-center">Our Latest Insights</h1>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-5xl font-extrabold text-gray-900 mb-10 text-center tracking-tight">Our Blog</h1>
       {blogs.length === 0 ? (
-        <p className="text-center text-lg text-gray-600">No published blogs yet. Please check back later!</p>
+        <p className="text-center text-xl text-gray-600">No published blogs yet. Check back soon!</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogs.map((blog) => (
-            <Card key={blog.id} className="flex flex-col">
+            <Card key={blog.id} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+              {blog.image_url && (
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={blog.image_url}
+                    alt={blog.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-t-lg"
+                  />
+                </div>
+              )}
               <CardHeader>
-                <CardTitle>{blog.title}</CardTitle>
-                <CardDescription>By {blog.author} on {new Date(blog.created_at).toLocaleDateString()}</CardDescription>
+                <CardTitle className="text-2xl font-bold leading-tight">
+                  <Link href={`/blogs/${blog.id}`} className="hover:text-blue-600 transition-colors duration-200">
+                    {blog.title}
+                  </Link>
+                </CardTitle>
+                <CardDescription className="text-gray-600 text-sm">
+                  Published on {new Date(blog.created_at).toLocaleDateString()}
+                </CardDescription>
               </CardHeader>
-              <CardContent className="flex-grow">
-                {/* Display a truncated version of the content */}
-                <p className="text-gray-700 mb-4">{blog.content.substring(0, 150)}...</p>
-                <Link href={`/blogs/${blog.id}`} passHref>
-                  <Button variant="link" className="p-0 h-auto">Read More</Button>
+              <CardContent>
+                <p className="text-gray-700 line-clamp-3">{blog.content}</p>
+                <Link href={`/blogs/${blog.id}`} className="text-blue-600 hover:underline mt-4 inline-block">
+                  Read More &rarr;
                 </Link>
               </CardContent>
             </Card>

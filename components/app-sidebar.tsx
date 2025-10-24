@@ -88,7 +88,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={adminData.navMain} />
-        {/* NavDocuments and NavSecondary are removed as per admin panel needs */}
         <NavMain items={adminData.navSecondary} className="mt-auto" /> {/* Reusing NavMain for secondary items */}
       </SidebarContent>
       <SidebarFooter>
