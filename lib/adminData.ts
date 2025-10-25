@@ -7,14 +7,14 @@ type Lead = Database['public']['Tables']['leads']['Row'];
 export async function getBlogStats() {
   const { data: blogs, error } = await supabase
     .from('blogs')
-    .select('is_published');
+    .select('status');
 
   if (error) {
     console.error('Error fetching blog stats:', error);
     return { published: 0, unpublished: 0 };
   }
 
-  const published = blogs.filter(blog => blog.is_published).length;
+  const published = blogs.filter(blog => blog.status).length;
   const unpublished = blogs.length - published;
 
   return { published, unpublished };

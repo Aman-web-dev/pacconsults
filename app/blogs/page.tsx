@@ -8,7 +8,7 @@ export async function generateStaticParams() {
   const { data: blogs, error } = await supabase
     .from('blogs')
     .select('id')
-    .eq('is_published', true);
+    .eq('status', "published");
 
   if (error) {
     console.error('Error fetching blog IDs for static paths:', error);
@@ -24,7 +24,7 @@ async function getPublishedBlogs() {
   const { data: blogs, error } = await supabase
     .from('blogs')
     .select('*')
-    .eq('is_published', true)
+    .eq('status', "published")
     .order('created_at', { ascending: false });
 
   if (error) {

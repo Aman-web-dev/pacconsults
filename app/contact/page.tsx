@@ -17,8 +17,8 @@ export default function ContactUsPage() {
             CONTACT US
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-            Whether you're ready to launch your business, need help with funding, or just want to explore how PAC
-            Consulting can support your goals, we're here for you.
+            Whether you&apos;re ready to launch your business, need help with funding, or just want to explore how PAC
+            Consulting can support your goals, we&apos;re here for you.
           </p>
         </div>
       </section>

@@ -106,7 +106,7 @@ const Item = ({ item }: { item: Testimonial }) => (
                 </div>
             </div>
             <div className="text-muted-foreground max-w-xs mt-2">
-                "{item.content}"
+                &quot;{item.content}&quot;
             </div>
             <div className="text-xs text-muted-foreground mt-4 flex gap-2">
                 <span>{item.time}</span>

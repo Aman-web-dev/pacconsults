@@ -30,7 +30,7 @@ export default function BookACallPage() {
             </CardHeader>
             <CardContent>
               <p className="text-center text-gray-700 mb-8">
-                Whether you're starting a new business, looking to expand, or need strategic financial advice,
+                Whether you&apos;re starting a new business, looking to expand, or need strategic financial advice,
                 our team is here to help. Fill out the form below to schedule a free consultation.
               </p>
               <form className="space-y-6">
@@ -68,7 +68,7 @@ export default function BookACallPage() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">What to Expect</h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            During your free consultation, we'll discuss your business goals, challenges, and how PAC Consulting can provide tailored solutions to help you succeed.
+            During your free consultation, we&apos;ll discuss your business goals, challenges, and how PAC Consulting can provide tailored solutions to help you succeed.
           </p>
         </div>
       </section>

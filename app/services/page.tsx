@@ -16,7 +16,7 @@ export default function ServicesPage() {
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
             At PAC Consulting, we help entrepreneurs and businesses lay strong financial and legal foundations to
-            scale confidently. Whether you're just starting or ready to expand, our services are designed to guide you every step of the
+            scale confidently. Whether you&apos;re just starting or ready to expand, our services are designed to guide you every step of the
             way.
           </p>
         </div>

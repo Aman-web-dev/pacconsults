@@ -11,6 +11,77 @@ import { BlogStatsChart } from '@/components/admin/BlogStatsChart';
 import { LeadStatsChart } from '@/components/admin/LeadStatsChart';
 import { BarChart as BarChartIcon, LineChart as LineChartIcon } from 'lucide-react'; // Re-importing for existing cards
 
+export type lead = {
+  /**
+   * The unique identifier for the lead.
+   * @type {string} (uuid)
+   */
+  id: string;
+
+  /**
+   * The full name of the lead.
+   * @type {string | null}
+   */
+  name: string | null;
+
+  /**
+   * The email address of the lead.
+   * @type {string | null}
+   */
+  email: string | null;
+
+  /**
+   * The phone number of the lead.
+   * @type {string | null}
+   */
+  phone: string | null;
+
+  /**
+   * The current status of the lead (e.g., "New", "Contacted", "Qualified").
+   * @type {string | null}
+   */
+  status: string | null;
+
+  /**
+   * The source from which the lead was generated (e.g., "Website", "Referral").
+   * @type {string | null}
+   */
+  source: string | null;
+
+  /**
+   * The timestamp when the lead was created.
+   * Stored as an ISO 8601 string format.
+   * @type {string}
+   */
+  created_at: string;
+
+  /**
+   * The timestamp when the lead was last updated.
+   * Stored as an ISO 8601 string format. Optional.
+   * @type {string | null}
+   */
+  updated_at: string | null;
+
+  /**
+   * The physical address of the lead.
+   * @type {string | null}
+   */
+  address: string | null;
+
+  /**
+   * The website URL associated with the lead.
+   * @type {string | null}
+   */
+  website: string | null;
+
+  /**
+   * Key highlights or notes about the lead.
+   * @type {string | null}
+   */
+  highlights: string | null;
+};
+
+
 export default function AdminDashboardPage() {
   const [blogStats, setBlogStats] = useState({ published: 0, unpublished: 0 });
   const [leadStats, setLeadStats] = useState({ total: 0 });

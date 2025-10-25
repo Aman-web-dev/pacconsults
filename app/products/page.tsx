@@ -37,12 +37,12 @@ export default function ProductsPage() {
               </div>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold leading-tight">
-                  Mekhai and Hayley's Big Adventure: Building Wealth in Two Cities!
+                  Mekhai and Hayley&apos;s Big Adventure: Building Wealth in Two Cities!
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 mb-4">
-                  Discovering the secrets of real estate and the stock market in two of the world's greatest cities!
+                  Discovering the secrets of real estate and the stock market in two of the world&apos;s greatest cities!
                 </p>
                 <Button variant="link" className="text-blue-600 hover:underline p-0 h-auto">Learn More &rarr;</Button>
               </CardContent>

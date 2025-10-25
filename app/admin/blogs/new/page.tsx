@@ -69,7 +69,7 @@ export default function CreateBlogPage() {
 
     const { error: insertError } = await supabase
       .from('blogs')
-      .insert([{ title, content, author, is_published: status === 'published', image_url }]);
+      .insert([{ title, content, author, status: status === 'published', image_url }]);
 
     if (insertError) {
       setError(insertError.message);
