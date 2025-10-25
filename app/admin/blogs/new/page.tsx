@@ -27,7 +27,7 @@ export default function CreateBlogPage() {
   const uploadImage = async (file: File) => {
     const fileExt = file.name.split('.').pop();
     const fileName = `${uuidv4()}.${fileExt}`;
-    const filePath = `blog-images/${fileName}`; // Supabase Storage path
+    const filePath = `public/${fileName}`; // Supabase Storage path
 
     const { error: uploadError } = await supabase.storage
       .from('blog-images') // Ensure this bucket exists in Supabase Storage
