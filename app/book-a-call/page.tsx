@@ -1,118 +1,77 @@
-// app/book-a-call/page.tsx
-// This page allows users to book a consultation call with PAC Consultants.
-
-'use client';
-
-import React, { useState } from 'react';
-import { Button } from '../../components/ui/button';
-import { Input } from '../../components/ui/input';
-import { Label } from '../../components/ui/label';
-import { Textarea } from '../../components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../components/ui/select';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 
 export default function BookACallPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    preferredDate: '',
-    preferredTime: '',
-    message: '',
-  });
-  const [status, setStatus] = useState('');
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
-  };
-
-  const handleSelectChange = (value: string, id: string) => {
-    setFormData({ ...formData, [id]: value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('Booking...');
-
-    // In a real application, this would send data to an API endpoint or a scheduling service.
-    console.log('Book a Call form submitted:', formData);
-
-    setTimeout(() => {
-      setStatus('Your call has been booked successfully! We will contact you shortly.');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        preferredDate: '',
-        preferredTime: '',
-        message: '',
-      });
-    }, 2000);
-  };
-
   return (
-    <div className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-6 text-gray-900">Book a Consultation Call</h1>
-      <p className="text-lg text-gray-700 mb-8">
-        Schedule a free consultation with our experts to discuss your needs and how PAC Consultants can help you achieve your goals.
-      </p>
-
-      <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <Label htmlFor="name">Your Name</Label>
-            <Input type="text" id="name" value={formData.name} onChange={handleChange} required />
-          </div>
-          <div>
-            <Label htmlFor="email">Your Email</Label>
-            <Input type="email" id="email" value={formData.email} onChange={handleChange} required />
-          </div>
+    <div className="min-h-screen bg-gray-100">
+      {/* Hero Section */}
+      <section className="relative bg-gray-800 text-white py-20 md:py-32 overflow-hidden">
+        {/* Background Image/Overlay - Placeholder for now */}
+        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: 'url(/path/to/your/book-a-call-hero-bg.jpg)' }}></div>
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+            Book a Call with PAC Consulting
+          </h1>
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+            Get expert guidance on business formation, credit restoration, funding, and strategic planning tailored to your goals.
+          </p>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <Label htmlFor="phone">Phone Number (Optional)</Label>
-            <Input type="tel" id="phone" value={formData.phone} onChange={handleChange} />
-          </div>
-          <div>
-            <Label htmlFor="service">Service of Interest</Label>
-            <Select value={formData.service} onValueChange={(value) => handleSelectChange(value, 'service')} required>
-              <SelectTrigger id="service">
-                <SelectValue placeholder="Select a service" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="business-strategy">Business Strategy</SelectItem>
-                <SelectItem value="marketing-seo">Marketing & SEO</SelectItem>
-                <SelectItem value="lead-generation">Lead Generation</SelectItem>
-                <SelectItem value="web-development">Web Development</SelectItem>
-                <SelectItem value="other">Other</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+      {/* Book a Call Form Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-2xl">
+          <Card className="shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-3xl font-bold text-center">BOOK A CALL!</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-center text-gray-700 mb-8">
+                Whether you're starting a new business, looking to expand, or need strategic financial advice,
+                our team is here to help. Fill out the form below to schedule a free consultation.
+              </p>
+              <form className="space-y-6">
+                <div>
+                  <Label htmlFor="name">Name</Label>
+                  <Input id="name" type="text" placeholder="Your Name" required />
+                </div>
+                <div>
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" type="email" placeholder="Your Email" required />
+                </div>
+                <div>
+                  <Label htmlFor="phone">Phone Number</Label>
+                  <Input id="phone" type="tel" placeholder="Your Phone Number" />
+                </div>
+                <div>
+                  <Label htmlFor="company">Company Name (Optional)</Label>
+                  <Input id="company" type="text" placeholder="Your Company" />
+                </div>
+                <div>
+                  <Label htmlFor="message">How can we help you?</Label>
+                  <Textarea id="message" placeholder="Tell us about your needs..." rows={5} />
+                </div>
+                <Button type="submit" size="lg" className="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg py-3">
+                  Schedule Call
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <Label htmlFor="preferredDate">Preferred Date</Label>
-            <Input type="date" id="preferredDate" value={formData.preferredDate} onChange={handleChange} required />
-          </div>
-          <div>
-            <Label htmlFor="preferredTime">Preferred Time</Label>
-            <Input type="time" id="preferredTime" value={formData.preferredTime} onChange={handleChange} required />
-          </div>
+      {/* Additional Info Section (Placeholder) */}
+      <section className="bg-gray-100 py-16 text-center">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">What to Expect</h2>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            During your free consultation, we'll discuss your business goals, challenges, and how PAC Consulting can provide tailored solutions to help you succeed.
+          </p>
         </div>
-
-        <div>
-          <Label htmlFor="message">Your Message / Specific Needs (Optional)</Label>
-          <Textarea id="message" value={formData.message} onChange={handleChange} rows={4} />
-        </div>
-
-        <Button type="submit" disabled={status === 'Booking...'}>
-          {status === 'Booking...' ? 'Booking...' : 'Book My Call'}
-        </Button>
-        {status && status !== 'Booking...' && <p className="mt-4 text-sm text-gray-600">{status}</p>}
-      </form>
+      </section>
     </div>
   );
 }

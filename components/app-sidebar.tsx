@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Image from 'next/image';
 import {
   IconInnerShadowTop, // Keeping this for the logo if needed
 } from "@tabler/icons-react"
@@ -78,9 +79,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
-              <a href="/admin">
-                <IconInnerShadowTop className="!size-5" />
-                <span className="text-base font-semibold">PAC Admin</span>
+              <a href="/admin" className="flex items-center">
+                <Image
+                  src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/16380205/992846_34707.png"
+                  alt="PAC Admin Logo"
+                  width={32}
+                  height={32}
+                  className="mr-2"
+                />
+                <span className="text-base font-semibold hidden sm:inline">PAC Admin</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>

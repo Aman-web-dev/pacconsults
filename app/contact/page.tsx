@@ -1,92 +1,75 @@
-// app/contact/page.tsx
-// This page provides contact information and a contact form for PAC Consultants.
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { Mail } from 'lucide-react';
 
-'use client';
-
-import React, { useState } from 'react';
-import { Button } from '../../components/ui/button';
-import { Input } from '../../components/ui/input';
-import { Label } from '../../components/ui/label';
-import { Textarea } from '../../components/ui/textarea'; // Assuming textarea is needed and will be added or is available
-
-export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-  const [status, setStatus] = useState('');
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('Sending...');
-
-    // In a real application, you would send this data to an API endpoint.
-    // For now, we'll just simulate a successful submission.
-    console.log('Contact form submitted:', formData);
-
-    setTimeout(() => {
-      setStatus('Message sent successfully!');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 2000);
-  };
-
+export default function ContactUsPage() {
   return (
-    <div className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-6 text-gray-900">Contact Us</h1>
-      <p className="text-lg text-gray-700 mb-8">
-        We&apos;d love to hear from you! Please fill out the form below or reach out to us directly.
-      </p>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <h2 className="text-2xl font-semibold mb-4 text-gray-900">Get in Touch</h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <Label htmlFor="name">Name</Label>
-              <Input type="text" id="name" value={formData.name} onChange={handleChange} required />
-            </div>
-            <div>
-              <Label htmlFor="email">Email</Label>
-              <Input type="email" id="email" value={formData.email} onChange={handleChange} required />
-            </div>
-            <div>
-              <Label htmlFor="subject">Subject</Label>
-              <Input type="text" id="subject" value={formData.subject} onChange={handleChange} required />
-            </div>
-            <div>
-              <Label htmlFor="message">Message</Label>
-              <Textarea id="message" value={formData.message} onChange={handleChange} required />
-            </div>
-            <Button type="submit">Send Message</Button>
-            {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
-          </form>
+    <div className="min-h-screen bg-gray-100">
+      {/* Hero Section */}
+      <section className="relative bg-gray-800 text-white py-20 md:py-32 overflow-hidden">
+        {/* Background Image/Overlay - Placeholder for now */}
+        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: 'url(/path/to/your/contact-hero-bg.jpg)' }}></div>
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+            CONTACT US
+          </h1>
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+            Whether you're ready to launch your business, need help with funding, or just want to explore how PAC
+            Consulting can support your goals, we're here for you.
+          </p>
         </div>
+      </section>
 
-        <div>
-          <h2 className="text-2xl font-semibold mb-4 text-gray-900">Our Details</h2>
-          <p className="text-lg text-gray-700 mb-2">
-            <strong>Email:</strong> info@pacconsultants.com
-          </p>
-          <p className="text-lg text-gray-700 mb-2">
-            <strong>Phone:</strong> +1 (555) 123-4567
-          </p>
-          <p className="text-lg text-gray-700 mb-2">
-            <strong>Address:</strong> 123 Consulting Ave, Suite 100, City, State, 12345
-          </p>
-          <div className="mt-6">
-            {/* Placeholder for a map or other contact info */}
-            <div className="bg-gray-200 h-48 flex items-center justify-center text-gray-500">
-              Map Placeholder
-            </div>
-          </div>
+      {/* Contact Form Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-2xl">
+          <Card className="shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-3xl font-bold text-center">Get in Touch</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center justify-center mb-8 text-lg text-gray-700">
+                <Mail className="mr-2 h-5 w-5" /> phill@pacconsults.com
+              </div>
+              <form className="space-y-6">
+                <div>
+                  <Label htmlFor="name">Name</Label>
+                  <Input id="name" type="text" placeholder="Your Name" required />
+                </div>
+                <div>
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" type="email" placeholder="Your Email" required />
+                </div>
+                <div>
+                  <Label htmlFor="subject">Subject</Label>
+                  <Input id="subject" type="text" placeholder="Subject of your inquiry" />
+                </div>
+                <div>
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea id="message" placeholder="Your message..." rows={7} required />
+                </div>
+                <Button type="submit" size="lg" className="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg py-3">
+                  Send Message
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
         </div>
-      </div>
+      </section>
+
+      {/* Location/Map Section (Placeholder) */}
+      <section className="bg-gray-100 py-16 text-center">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Location</h2>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            While we operate globally, our team is always ready to connect.
+            {/* Placeholder for an embedded map or address details */}
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
