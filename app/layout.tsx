@@ -1,31 +1,29 @@
-// app/layout.tsx
-// This is the root layout for the entire application, including public pages.
+import Providers from "@/components/global/providers";
+import { base, heading } from "@/constants/fonts";
+import { cn } from "@/lib";
+import "@/styles/globals.css";
+import { generateMetadata } from "@/utils";
 
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { PublicNav } from "@/components/public-nav";
-import Image from "next/image";
-
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "PAC Consultants",
-  description: "Strategic guidance and innovative solutions for growth.",
-};
+export const metadata = generateMetadata();
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>
-        {/* Public Navigation Bar (client-side route-aware) */}
-        <PublicNav />
-        {children}
-      </body>
-    </html>
-  );
-}
+    children,
+}: {
+    children: React.ReactNode;
+}) {
+    return (
+        <html lang="en" suppressHydrationWarning>
+            <body
+                className={cn(
+                    "min-h-screen bg-[#050505] text-foreground font-base antialiased dark",
+                    base.variable,
+                    heading.variable,
+                )}
+            >
+                <Providers>
+                    {children}
+                </Providers>
+            </body>
+        </html>
+    );
+};

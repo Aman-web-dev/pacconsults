@@ -1,36 +1,13 @@
 import React from "react";
 import Image from "next/image";
+import { FAQS } from "@/constants";
 import Wrapper from "@/components/global/wrapper";
 import Container from "@/components/global/container";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-// Placeholder FAQS array - replace with actual content for PAC Consultants
-const FAQS = [
-    {
-        question: "What services does PAC Consulting offer?",
-        answer: "PAC Consulting specializes in business funding, sales & acquisitions, credit restoration, commercial real estate, and strategic business planning.",
-    },
-    {
-        question: "How can PAC Consulting help my business grow?",
-        answer: "We provide tailored solutions and expert guidance to help entrepreneurs and businesses secure funding, optimize operations, and achieve sustainable growth.",
-    },
-    {
-        question: "Do you offer free consultations?",
-        answer: "Yes, we offer free initial consultations to understand your needs and discuss how we can best support your business goals.",
-    },
-    {
-        question: "What is the process for securing business funding?",
-        answer: "Our process typically involves an initial assessment, strategic planning to identify suitable funding options, and hands-on support through the application and approval stages.",
-    },
-    {
-        question: "Can you assist with credit repair for businesses?",
-        answer: "Absolutely. We offer services to help businesses restore and build strong credit profiles, which is crucial for accessing better financing opportunities.",
-    },
-];
-
 const Faq = () => {
     return (
-        <div className="flex flex-col items-center text-white justify-center relative w-full py-16 lg:py-24 overflow-hidden">
+        <div className="flex flex-col items-center justify-center relative w-full py-16 lg:py-24 overflow-hidden">
 
             <div className="absolute top-0 -right-1/3 -z-10 ml-auto w-4/5 h-32 lg:h-48 rounded-full blur-[5rem] bg-[radial-gradient(86.02%_172.05%_at_50%_-40%,rgba(18,139,135,0.7)_0%,rgba(5,5,5,0)_80%)]"></div>
 
@@ -69,8 +46,8 @@ const Faq = () => {
                         <div className="col-span-1 w-full z-10">
                             <div className="flex w-full">
                                 <Image
-                                    src="/images/faq.svg" // Placeholder image
-                                    alt="FAQ Illustration"
+                                    src="/images/faq.svg"
+                                    alt="Box"
                                     width={1024}
                                     height={1024}
                                     className="w-full"
@@ -84,4 +61,4 @@ const Faq = () => {
     )
 };
 
-export default Faq;
+export default Faq

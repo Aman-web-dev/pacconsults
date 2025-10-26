@@ -1,5 +1,6 @@
 import Container from "@/components/global/container";
 import Wrapper from "@/components/global/wrapper";
+import { BLOGS } from "@/constants";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -15,46 +16,9 @@ type Blog = {
     authorImage: string;
 };
 
-// Placeholder BLOGS array - replace with actual content for PAC Consultants
-const BLOGS: Blog[] = [
-    {
-        title: "The Future of Business Funding",
-        desc: "Explore emerging trends and innovative strategies in securing capital for your enterprise.",
-        image: "/images/blog1.svg", // Placeholder image
-        category: "Funding",
-        author: "Philip Crawford",
-        authorRole: "CEO",
-        authorCompany: "PAC Consulting",
-        authorCompanyUrl: "#",
-        authorImage: "/images/avatar-1.jpg", // Placeholder image
-    },
-    {
-        title: "Mastering Mergers & Acquisitions",
-        desc: "A comprehensive guide to navigating the complexities of business sales and acquisitions.",
-        image: "/images/blog2.svg", // Placeholder image
-        category: "M&A",
-        author: "Jane Smith",
-        authorRole: "Lead Advisor",
-        authorCompany: "PAC Consulting",
-        authorCompanyUrl: "#",
-        authorImage: "/images/avatar-2.jpg", // Placeholder image
-    },
-    {
-        title: "Building Strong Business Credit",
-        desc: "Essential steps and strategies to establish and maintain a robust credit profile for your company.",
-        image: "/images/blog3.svg", // Placeholder image
-        category: "Credit",
-        author: "Robert Johnson",
-        authorRole: "Financial Expert",
-        authorCompany: "PAC Consulting",
-        authorCompanyUrl: "#",
-        authorImage: "/images/avatar-3.jpg", // Placeholder image
-    },
-];
-
 const Blogs = () => {
     return (
-        <div className="flex flex-col items-center text-white justify-center relative w-full pb-16 lg:pb-24">
+        <div className="flex flex-col items-center justify-center relative w-full pb-16 lg:pb-24">
             <Wrapper>
                 <Container>
                     <div className="flex flex-col items-start justify-start lg:items-center lg:justify-center">
@@ -93,11 +57,11 @@ const Item = ({ item, index }: { item: Blog, index: number }) => (
                 />
             </div>
             <div className="flex flex-col mt-4">
-                <span className="inline-block px-3 py-1 rounded-sm bg-neutral-800/80 text-xs text-foreground/80 w-max text-white">
+                <span className="inline-block px-3 py-1 rounded-sm bg-neutral-800/80 text-xs text-foreground/80 w-max">
                     {item.category}
                 </span>
                 <Link
-                    href={`/blogs/${encodeURIComponent(item.title.toLowerCase().replace(/\s+/g, "-"))}`}
+                    href={`/blog/${encodeURIComponent(item.title.toLowerCase().replace(/\s+/g, "-"))}`}
                     className="text-lg lg:text-xl font-semibold mt-2"
                 >
                     {item.title}

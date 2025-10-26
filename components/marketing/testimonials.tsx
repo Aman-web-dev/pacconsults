@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { FAQS, TESTIMONIALS } from "@/constants";
 import Wrapper from "@/components/global/wrapper";
 import Container from "@/components/global/container";
 import { Marquee } from "../ui/marquee";
@@ -16,53 +17,9 @@ type Testimonial = {
     highlighted?: boolean;
 };
 
-// Placeholder TESTIMONIALS array - replace with actual content for PAC Consultants
-const TESTIMONIALS: Testimonial[] = [
-    {
-        name: "John Doe",
-        role: "CEO",
-        company: "Tech Solutions",
-        companyUrl: "#",
-        image: "https://plus.unsplash.com/premium_photo-1689977927774-401b12d137d6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470", // Placeholder image
-        content: "PAC Consulting provided invaluable guidance. Their expertise in funding helped us secure the capital needed for our expansion. Highly recommended!",
-        time: "2 days ago",
-        date: "Oct 23, 2025",
-    },
-    {
-        name: "Jane Smith",
-        role: "Founder",
-        company: "Innovate Co.",
-        companyUrl: "#",
-        image: "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1476", // Placeholder image
-        content: "The team at PAC Consulting is exceptional. Their strategic planning transformed our business, leading to significant growth and market penetration.",
-        time: "1 week ago",
-        date: "Oct 18, 2025",
-    },
-    {
-        name: "Robert Johnson",
-        role: "Director",
-        company: "Global Ventures",
-        companyUrl: "#",
-        image: "https://images.unsplash.com/photo-1746194060000-3615371d42bf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687", // Placeholder image
-        content: "We partnered with PAC for a complex acquisition, and their M&A advisory was top-notch. Smooth process and excellent results.",
-        time: "2 weeks ago",
-        date: "Oct 11, 2025",
-    },
-    {
-        name: "Emily White",
-        role: "Owner",
-        company: "Local Business",
-        companyUrl: "#",
-        image: "https://images.unsplash.com/photo-1590086782957-93c06ef21604?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687", // Placeholder image
-        content: "Their credit restoration services were a game-changer for our small business. We now have access to better financing options.",
-        time: "3 weeks ago",
-        date: "Oct 4, 2025",
-    },
-];
-
 const Testimonials = () => {
     return (
-        <div className="flex flex-col items-center text-white justify-center relative w-full pb-16 lg:pb-24">
+        <div className="flex flex-col items-center justify-center relative w-full pb-16 lg:pb-24">
             <Wrapper>
                 <div className="relative flex flex-col items-center justify-center overflow-hidden">
                     <Marquee pauseOnHover className="[--duration:80s] gap-8">
@@ -117,4 +74,4 @@ const Item = ({ item }: { item: Testimonial }) => (
     </Container>
 );
 
-export default Testimonials;
+export default Testimonials

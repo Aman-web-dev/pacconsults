@@ -1,53 +1,20 @@
 import React from 'react'
 import Container from "../global/container";
 import Wrapper from "../global/wrapper";
+import { FEATURES } from "@/constants";
 import Image from "next/image";
-
-// Placeholder FEATURES array - replace with actual content for PAC Consultants
-const FEATURES = [
-    {
-        title: "Strategic Business Planning",
-        desc: "Develop robust strategies for growth, market entry, and competitive advantage.",
-        icon: "/icons/pie.svg", // Placeholder image
-    },
-    {
-        title: "Comprehensive Funding Solutions",
-        desc: "Access diverse funding options including SBA loans, M&A financing, and working capital.",
-        icon: "/icons/computer.svg", // Placeholder image
-    },
-    {
-        title: "Expert M&A Advisory",
-        desc: "Navigate mergers and acquisitions with expert guidance for maximum value.",
-        icon: "/icons/label.svg", // Placeholder image
-    },
-    {
-        title: "Credit Restoration & Building",
-        desc: "Improve your business credit profile to unlock better financial opportunities.",
-        icon: "/icons/crown.svg", // Placeholder image
-    },
-    {
-        title: "Commercial Real Estate",
-        desc: "Get expert advice and financing for your commercial property needs.",
-        icon: "/icons/cursor.svg", // Placeholder image
-    },
-    {
-        title: "Equipment Financing",
-        desc: "Secure financing for essential equipment to boost your operational efficiency.",
-        icon: "/icons/clock.svg", // Placeholder image
-    },
-];
 
 const Features = () => {
     return (
-        <div className="flex flex-col items-center justify-center text-white w-full py-16 lg:py-24">
+        <div className="flex flex-col items-center justify-center w-full py-16 lg:py-24">
             <Wrapper>
                 <Container>
                     <div className="flex flex-col items-start justify-start lg:items-center lg:justify-center">
                         <h2 className="text-3xl lg:text-4xl font-semibold text-left lg:text-center tracking-tight">
-                            Tailored Solutions That Drive <br /> Your Business Forward
+                            Build a solution that wins you <br /> more customers
                         </h2>
                         <p className="text-base lg:text-lg font-normal text-muted-foreground text-left lg:text-center max-w-md mt-2">
-                            At PAC Consulting, we offer a suite of services designed to meet the unique needs of entrepreneurs and businesses, ensuring sustainable growth and success.
+                            Experience the power of Pac Consulting with our easy-to-use notebook solution. Get started in minutes
                         </p>
                     </div>
                 </Container>
@@ -97,4 +64,4 @@ const Feature = ({
     )
 };
 
-export default Features;
+export default Features
