@@ -80,7 +80,7 @@ export default function AdminBlogsPage() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-gray-900">Blog Management</h1>
+        <h1 className="text-3xl font-bold ">Blog Management</h1>
         <Link href="/admin/blogs/new" passHref>
           <Button>Create New Blog</Button>
         </Link>

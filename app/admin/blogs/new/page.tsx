@@ -3,7 +3,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '../../../../lib/supabaseClient';
 import { Button } from '../../../../components/ui/button';
@@ -18,6 +18,8 @@ export default function CreateBlogPage() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
+  const [description,setDescription]=useState('');
   const [status, setStatus] = useState<'draft' | 'published'>('draft');
   const [imageFile, setImageFile] = useState<File | null>(null); // New state for image file
   const [loading, setLoading] = useState(false);
@@ -69,7 +71,7 @@ export default function CreateBlogPage() {
 
     const { error: insertError } = await supabase
       .from('blogs')
-      .insert([{ title, content, author, status: status === 'published', image_url }]);
+      .insert([{ title, content, author, status, image_url,description, category }]);
 
     if (insertError) {
       setError(insertError.message);
@@ -81,7 +83,7 @@ export default function CreateBlogPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl font-bold text-gray-900">Create New Blog Post</h1>
+      <h1 className="text-3xl font-bold ">Create New Blog Post</h1>
       <Card>
         <CardHeader>
           <CardTitle>Blog Details</CardTitle>
@@ -100,13 +102,40 @@ export default function CreateBlogPage() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="content">Content</Label>
+              <Label htmlFor="description">Description</Label>
               <Textarea
+                style={{ width: "100%", height: "100px" }}
+                id="description"
+                placeholder="Write blog Description here..."
+                value={description}
+                onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setDescription(e.target.value)}
+                rows={10}
+                cols={20}
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="Content">Content</Label>
+              <Textarea
+                style={{ width: "100%", height: "800px" }}
                 id="content"
                 placeholder="Write your blog content here..."
                 value={content}
-                onChange={(e) => setContent(e.target.value)}
-                rows={10}
+                onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setContent(e.target.value)}
+                rows={40}
+                cols={50}
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="category">Category</Label>
+              <Input
+                id="category"
+                type="text"
+                maxLength={40}
+                placeholder="Category Name"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
                 required
               />
             </div>
@@ -117,6 +146,7 @@ export default function CreateBlogPage() {
                 type="text"
                 placeholder="Author Name"
                 value={author}
+                maxLength={30}
                 onChange={(e) => setAuthor(e.target.value)}
                 required
               />

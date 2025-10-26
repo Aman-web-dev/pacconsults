@@ -116,12 +116,12 @@ export default function AdminDashboardPage() {
     <div className="flex flex-1 flex-col">
       <div className="@container/main flex flex-1 flex-col gap-2">
         <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
-          <div className="space-y-8 p-4 md:p-8 bg-white rounded-lg shadow-xl">
+          <div className="space-y-8 p-4 md:p-8  rounded-lg shadow-xl">
             <div className="flex items-center justify-between">
-              <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">Admin Dashboard</h1>
-              <p className="text-lg text-gray-600 hidden md:block">Welcome back, Administrator!</p>
+              <h1 className="text-4xl font-extrabold  tracking-tight">Admin Dashboard</h1>
+              <p className="text-lg  hidden md:block">Welcome back, Administrator!</p>
             </div>
-            <p className="text-xl text-gray-700 leading-relaxed">
+            <p className="text-xl  leading-relaxed">
               Manage your content, leads, and SEO settings with ease.
             </p>
 
