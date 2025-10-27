@@ -1,13 +1,55 @@
-import React from 'react'
-import Wrapper from "../global/wrapper"
-import Container from "../global/container"
-import { Button } from "../ui/button"
-import { Input } from "../ui/input"
-import { Label } from "../ui/label"
-import { Textarea } from "../ui/textarea"
-import { UploadIcon } from "lucide-react"
+'use client'
+
+import React, { useState } from 'react';
+import Wrapper from "../global/wrapper";
+import Container from "../global/container";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
+import { Textarea } from "../ui/textarea";
+import { toast } from "sonner"; // For displaying notifications
 
 const ContactForm = () => {
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [subject, setSubject] = useState('');
+    const [workEmail, setWorkEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: `${firstName} ${lastName}`,
+                email: workEmail,
+                subject,
+                message,
+            }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            toast.success(data.message);
+            // Clear form fields
+            setFirstName('');
+            setLastName('');
+            setSubject('');
+            setWorkEmail('');
+            setMessage('');
+        } else {
+            toast.error(data.message || 'Failed to send message.');
+        }
+        setLoading(false);
+    };
+
     return (
         <div className="w-full pb-16 lg:pb-24">
             <Wrapper>
@@ -20,7 +62,7 @@ const ContactForm = () => {
                 </Container>
 
                 <Container delay={0.2}>
-                    <form className="max-w-3xl mx-auto w-full mt-10 space-y-4">
+                    <form onSubmit={handleSubmit} className="max-w-3xl mx-auto w-full mt-10 space-y-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <Label htmlFor="firstName">
@@ -30,6 +72,9 @@ const ContactForm = () => {
                                     id="firstName"
                                     placeholder="John"
                                     className="bg-[#0A0A0A] border-border/50"
+                                    value={firstName}
+                                    onChange={(e) => setFirstName(e.target.value)}
+                                    required
                                 />
                             </div>
                             <div className="space-y-2">
@@ -40,6 +85,9 @@ const ContactForm = () => {
                                     id="lastName"
                                     placeholder="Doe"
                                     className="bg-[#0A0A0A] border-border/50"
+                                    value={lastName}
+                                    onChange={(e) => setLastName(e.target.value)}
+                                    required
                                 />
                             </div>
                         </div>
@@ -52,6 +100,9 @@ const ContactForm = () => {
                                 id="subject"
                                 placeholder="Type your subject here"
                                 className="bg-[#0A0A0A] border-border/50"
+                                value={subject}
+                                onChange={(e) => setSubject(e.target.value)}
+                                required
                             />
                         </div>
 
@@ -64,6 +115,9 @@ const ContactForm = () => {
                                 type="email"
                                 placeholder="johndoe@example.com"
                                 className="bg-[#0A0A0A] border-border/50"
+                                value={workEmail}
+                                onChange={(e) => setWorkEmail(e.target.value)}
+                                required
                             />
                         </div>
 
@@ -75,10 +129,14 @@ const ContactForm = () => {
                                 id="message"
                                 placeholder="Type your message here..."
                                 className="min-h-[150px] bg-[#0A0A0A] border-border/50 resize-none"
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                required
                             />
                         </div>
 
-                        <div className="flex flex-col gap-2">
+                        {/* File upload removed as per current task focus on email contact */}
+                        {/* <div className="flex flex-col gap-2">
                             <label
                                 htmlFor="file-upload"
                                 className="flex items-center justify-center gap-2 px-4 py-8 rounded-lg border border-dashed border-border/50 bg-[#0A0A0A] cursor-pointer"
@@ -94,10 +152,10 @@ const ContactForm = () => {
                                     className="hidden"
                                 />
                             </label>
-                        </div>
+                        </div> */}
 
-                        <Button className="w-full">
-                            Submit
+                        <Button className="w-full" type="submit" disabled={loading}>
+                            {loading ? 'Submitting...' : 'Submit'}
                         </Button>
                     </form>
                 </Container>

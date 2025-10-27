@@ -12,11 +12,12 @@ const AboutPhillip = () => {
                     <Container>
                         <div className="mb-8">
                             <Image
-                                src="/images/hero.svg"
+                                src="/images/philiphero.png"
                                 alt="Phillip Crawford"
                                 width={500}
-                                height={400}
-                                className="w-full h-96 object-cover rounded-2xl"
+                                height={900}
+                                quality={100}
+                                className="w-full  object-cover rounded-2xl"
                             />
                         </div>
                     </Container>
