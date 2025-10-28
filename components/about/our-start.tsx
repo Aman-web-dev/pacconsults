@@ -34,18 +34,7 @@ const OurStart = () => {
                         </p>
                     </Container>
 
-                    <Container delay={0.5} className="w-full max-w-4xl mx-auto">
-                        <div className="mt-10 w-full">
-                            <div className="flex flex-col items-center justify-center text-center h-80 w-full bg-primary rounded-xl lg:rounded-2xl p-6">
-                                <h3 className="text-3xl lg:text-4xl font-semibold tracking-tight text-black">
-                                    Simplifying everything you <br className="hidden lg:block" /> can do with this product
-                                </h3>
-                                <Button size="md" variant="black" className="mt-6">
-                                    Our Integration
-                                </Button>
-                            </div>
-                        </div>
-                    </Container>
+                    
                 </div>
             </Wrapper>
         </div>
