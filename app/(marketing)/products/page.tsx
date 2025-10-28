@@ -50,7 +50,7 @@ export default function BookProductPage() {
                 >
                   <div className="absolute inset-0 bg-[#21b9ab]/20 blur-3xl rounded-full"></div>
                   <img 
-                    src="https://via.placeholder.com/400x550/1a1a1a/21b9ab?text=Mekhai+%26+Hayley's+Adventure" 
+                    src="/images/397079_194231.webp" 
                     alt="Book Cover"
                     className="relative z-10 rounded-2xl shadow-2xl w-full max-w-md"
                   />
