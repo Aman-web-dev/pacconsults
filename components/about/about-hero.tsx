@@ -91,10 +91,11 @@ const AboutHero = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative w-full h-full">
               <Image
-                src="/images/372948_349758.webp"
+                src="/images/Gemini_Generated_Image_t98po7t98po7t98p.png"
                 alt="Philip Crawford"
                 width={700}
                 height={700}
+                priority
                 className="rounded-2xl shadow-lg object-cover w-full h-full"
               />
             </div>

@@ -12,12 +12,13 @@ const AboutPhillip = () => {
                     <Container>
                         <div className="mb-8">
                             <Image
-                                src="/images/philiphero.png"
+                                src="/images/Gemini_Generated_Image_t98po7t98po7t98p.png"
                                 alt="Phillip Crawford"
-                                width={500}
-                                height={900}
+                                width={600}
+                                height={600}
                                 quality={100}
-                                className="w-full  object-cover rounded-2xl"
+                                priority
+                                className="w-full h-auto max-h-[600px] object-contain rounded-2xl"
                             />
                         </div>
                     </Container>
