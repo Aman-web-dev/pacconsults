@@ -152,7 +152,7 @@ export default function AdminDashboardPage() {
               <LeadStatsChart data={leadsByStatus} />
 
               {/* Placeholder for other cards, can be removed or replaced */}
-              <Card className="hover:shadow-lg transition-shadow duration-300 ease-in-out border-l-4 border-purple-500">
+              {/* <Card className="hover:shadow-lg transition-shadow duration-300 ease-in-out border-l-4 border-purple-500">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-2xl font-semibold">SEO Settings</CardTitle>
                   <Settings className="h-8 w-8 text-purple-500" />
@@ -161,9 +161,9 @@ export default function AdminDashboardPage() {
                   <CardDescription className="text-gray-700 text-base">Configure global SEO parameters for your website.</CardDescription>
                   <p className="text-sm text-gray-500 mt-2">Optimize your site for search engines.</p>
                 </CardContent>
-              </Card>
+              </Card> */}
 
-              <Card className="hover:shadow-lg transition-shadow duration-300 ease-in-out border-l-4 border-yellow-500">
+              {/* <Card className="hover:shadow-lg transition-shadow duration-300 ease-in-out border-l-4 border-yellow-500">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-2xl font-semibold">Website Analytics</CardTitle>
                   <BarChartIcon className="h-8 w-8 text-yellow-500" />
@@ -172,7 +172,7 @@ export default function AdminDashboardPage() {
                   <CardDescription className="text-gray-700 text-base">Monitor your website&apos;s performance and traffic.</CardDescription>
                   <p className="text-sm text-gray-500 mt-2">Gain insights into user behavior.</p>
                 </CardContent>
-              </Card>
+              </Card> */}
             </div>
           </div>
         </div>

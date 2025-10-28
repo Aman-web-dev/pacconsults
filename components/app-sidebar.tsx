@@ -56,16 +56,16 @@ const adminData = {
     },
   ],
   navSecondary: [
-    {
-      title: "Settings",
-      url: "/admin/settings",
-      icon: Settings,
-    },
-    {
-      title: "Help",
-      url: "/admin/help", // Placeholder route
-      icon: HelpCircle,
-    },
+    // {
+    //   title: "Settings",
+    //   url: "/admin/settings",
+    //   icon: Settings,
+    // },
+    // {
+    //   title: "Help",
+    //   url: "/admin/help", // Placeholder route
+    //   icon: HelpCircle,
+    // },
   ],
 }
 

@@ -12,6 +12,7 @@ export function PublicNav() {
 
   const navLinks = [
     { href: "/about", label: "About" },
+    { href: "/products", label: "Products" },
     { href: "/contact", label: "Contact" },
     { href: "/book-a-call", label: "Book a Call" },
     { href: "/become-a-affiliate", label: "Affiliate" },
@@ -62,7 +63,7 @@ export function PublicNav() {
             {/* Main Navigation Links */}
             <div className="space-x-4 hidden md:flex">
               {navLinks.map((link) => (
-                <Link key={link.href} href={link.href} passHref>
+                <Link key={link.href} href={link.href}>
                   <Button
                     variant="ghost"
                     className={`text-white hover:bg-gray-700 ${

@@ -9,7 +9,7 @@ export const NAV_LINKS = [
     },
     {
         name: "Products",
-        link: "/#products",
+        link: "/products",
     },
     {
         name: "Book a Call",
@@ -17,7 +17,7 @@ export const NAV_LINKS = [
     },
     {
         name: "Become an Affiliate",
-        link: "/#affiliate",
+        link: "/affiliate",
     },
     {
         name: "About us",
