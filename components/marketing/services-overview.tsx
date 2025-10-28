@@ -15,7 +15,7 @@ const ServicesOverview = () => {
                 "Seller notes, earnouts, SBA coordination"
             ],
             cta: "GET A FREE VALUATION",
-            image: "/images/hero.svg"
+            image: "/images/sell-side-advisory.webp"
         },
         {
             title: "Business Funding",
@@ -26,7 +26,7 @@ const ServicesOverview = () => {
                 "Bank + fintech network"
             ],
             cta: "CHECK FUNDING OPTIONS",
-            image: "/images/hero.svg"
+            image: "/images/business-plan.webp"
         }
     ];
 
