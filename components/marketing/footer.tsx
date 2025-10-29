@@ -38,32 +38,8 @@ const Footer = () => {
                         </div>
                     </Container>
 
-                    <div className="grid grid-cols-2 md:place-items-end w-full">
-                        <Container animation="fadeUp" delay={0.5}>
-                            <div>
-                                <h3 className="text-base font-medium">
-                                    Product
-                                </h3>
-                                <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                                    {PRODUCT_LINKS.map((link, index) => (
-                                        <Container
-                                            key={index}
-                                            animation="fadeLeft"
-                                            delay={0.6 + (index * 0.1)}
-                                        >
-                                            <li>
-                                                <Link
-                                                    href={link.href}
-                                                    className="hover:text-foreground transition-colors"
-                                                >
-                                                    {link.label}
-                                                </Link>
-                                            </li>
-                                        </Container>
-                                    ))}
-                                </ul>
-                            </div>
-                        </Container>
+                    <div className="grid grid-cols-1 md:place-items-end w-full">
+                       
 
                         <Container animation="fadeUp" delay={0.5}>
                             <div>

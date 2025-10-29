@@ -41,9 +41,37 @@ export const PRODUCT_LINKS = [
 ];
 
 export const RESOURCES_LINKS = [
-    { label: "Blog", href: "/blog" },
-    { label: "Help Center", href: "/help" },
-    { label: "API Docs", href: "/docs" },
-    { label: "Contact Us", href: "/contact" },
+     {
+        label: "Home",
+        href: "/",
+    },
+    {
+        label: "Services",
+        href: "/#services",
+    },
+    {
+        label: "Products",
+        href: "/products",
+    },
+    {
+        label: "Book a Call",
+        href: "/#contact",
+    },
+    {
+        label: "Become an Affiliate",
+        href: "/affiliate",
+    },
+    {
+        label: "About us",
+        href: "/about",
+    },
+    {
+        label: "Contact us",
+        href: "/contact",
+    },
+     {
+        label: "Blogs",
+        href: "/blogs",
+    },
 ];
 
