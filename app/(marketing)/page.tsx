@@ -15,7 +15,7 @@ import ServicesOverview from "@/components/marketing/services-overview";
 
 const HomePage = () => {
     return (
-        <div className="w-full relative flex flex-col pt-16">
+        <div className="w-full relative flex flex-col">
             <Hero />
             <ContactFormHero />
             <WhoWeHelp />
