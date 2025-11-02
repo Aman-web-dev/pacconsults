@@ -62,8 +62,13 @@ const AboutHero = () => {
             </Container>
 
             <Container delay={0.4}>
+
+              
               <div className="mt-8 flex justify-center lg:justify-start">
+              <a target="_blank" href="https://calendly.com/pacconsulting/investororsellerdiscoverycall?back=1">
                 <Button size="md">Schedule a Call</Button>
+
+              </a>
               </div>
             </Container>
           </div>
@@ -126,7 +131,10 @@ const AboutHero = () => {
           </div>
 
           <div className="text-center mt-12">
+            <a target="_blank" href="https://calendly.com/pacconsulting/investororsellerdiscoverycall?back=1">
             <Button size="lg">Schedule a Call</Button>
+
+            </a>
           </div>
         </Container>
       </Wrapper>
