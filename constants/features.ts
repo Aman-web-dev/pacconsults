@@ -7,7 +7,7 @@ export const FEATURES = [
         "Comprehensive Valuation & Marketing - Position your business to achieve top market value with accurate valuation and targeted, confidential marketing.",
         "Negotiation & Deal Structuring - We manage buyer outreach, negotiations, and deal terms including seller notes, earnouts, and SBA coordination for seamless closings."
     ],
-    calendly: "https://calendly.com/pacconsulting/sell-side-advisory?back=1"
+    calendly: "https://calendly.com/pacconsulting/"
 },
 {
     title: "BUY-SIDE ADVISORY",
@@ -17,7 +17,7 @@ export const FEATURES = [
         "Targeted Acquisition Search - Discover businesses aligned with your goals, budget, and industry preferences using our extensive network and research capabilities.",
         "Financial & Operational Due Diligence - Make informed decisions with expert analysis of financials, operations, and market positioning before you commit."
     ],
-    calendly: "https://calendly.com/pacconsulting/buy-side-advisory?back=1"
+    calendly: "https://calendly.com/pacconsulting/"
 },
 {
     title: "BUSINESS CREDIT DEVELOPMENT",
@@ -27,7 +27,7 @@ export const FEATURES = [
         "Credit Building Strategy - Establish and grow your business credit score through structured vendor accounts and reporting systems.",
         "Access to Business Credit Tools - Get personalized guidance and resources to monitor, manage, and improve your business credit effectively."
     ],
-    calendly: "https://calendly.com/pacconsulting/business-credit-development?back=1"
+    calendly: "https://calendly.com/pacconsulting/"
 },
 {
     title: "BUSINESS AUTOMATION & SYSTEMS",
@@ -37,7 +37,7 @@ export const FEATURES = [
         "Workflow Optimization - Identify bottlenecks and automate repetitive tasks to boost productivity and efficiency.",
         "Tech Stack Integration - We help you choose and implement the right CRM, project management, and communication tools to streamline your business."
     ],
-    calendly: "https://calendly.com/pacconsulting/business-automation?back=1"
+    calendly: "https://calendly.com/pacconsulting/"
 },
 {
     title: "MARKETING STRATEGY & GROWTH",
@@ -47,7 +47,7 @@ export const FEATURES = [
         "Brand Positioning & Messaging - Define your unique value proposition and craft a brand story that resonates with your audience.",
         "Performance Marketing Execution - Leverage digital campaigns, analytics, and automation to maximize ROI and sustain growth."
     ],
-    calendly: "https://calendly.com/pacconsulting/marketing-strategy?back=1"
+    calendly: "https://calendly.com/pacconsulting/"
 },
 {
     title: "EXIT PLANNING & SUCCESSION",
@@ -57,6 +57,6 @@ export const FEATURES = [
         "Comprehensive Exit Strategy - Evaluate timing, valuation, and structure to maximize return while minimizing tax and transition risks.",
         "Succession & Continuity Planning - Ensure leadership continuity and business stability with tailored succession frameworks for owners and key executives."
     ],
-    calendly: "https://calendly.com/pacconsulting/exit-planning?back=1"
+    calendly: "https://calendly.com/pacconsulting/"
 }
 ];

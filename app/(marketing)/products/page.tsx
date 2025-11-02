@@ -103,7 +103,7 @@ export default function BookProductPage() {
       </section>
 
       {/* Additional Section - "I will Help You in" Style */}
-      <section className="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
+      {/* <section className="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-16 border border-gray-800 relative overflow-hidden">
             <div className="absolute bottom-0 right-0 w-96 h-96">
@@ -136,7 +136,7 @@ export default function BookProductPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer CTA */}
       <section className="py-20 px-6 bg-black">

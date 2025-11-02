@@ -31,114 +31,8 @@ export default function BecomeAffiliatePage() {
         </div>
       </section>
 
-      {/* Who We Help Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Who We Help
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              We help owners sell for maximum value and get the capital they need to grow.
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Card 1: Business Owners Ready to Sell */}
-            <div 
-              className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800 hover:border-[#21b9ab] transition-all duration-500 relative overflow-hidden group"
-              onMouseEnter={() => setHoveredCard(1)}
-              onMouseLeave={() => setHoveredCard(0)}
-            >
-              {/* Background Accent */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#21b9ab]/10 rounded-full blur-3xl transform translate-x-32 -translate-y-32 group-hover:scale-150 transition-transform duration-700"></div>
-              
-              <div className="relative z-10">
-                {/* Icon */}
-                <div className="w-16 h-16 bg-[#21b9ab]/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#21b9ab]/30 transition">
-                  <svg className="w-8 h-8 text-[#21b9ab]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                </div>
-
-                <h3 className="text-2xl font-bold mb-4">
-                  Business Owners Ready to Sell
-                </h3>
-                
-                <p className="text-gray-400 mb-6 text-sm">
-                  (home services, fitness, restaurants, laundromats)
-                </p>
-
-                <button className="w-full bg-[#21b9ab] text-black px-6 py-4 rounded-full font-bold hover:bg-[#19968a] transition-all transform group-hover:scale-105">
-                  CONTACT US
-                </button>
-              </div>
-            </div>
-
-            {/* Card 2: Operators Seeking Growth Capital */}
-            <div 
-              className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800 hover:border-[#21b9ab] transition-all duration-500 relative overflow-hidden group"
-              onMouseEnter={() => setHoveredCard(2)}
-              onMouseLeave={() => setHoveredCard(0)}
-            >
-              {/* Background Accent */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#21b9ab]/10 rounded-full blur-3xl transform translate-x-32 -translate-y-32 group-hover:scale-150 transition-transform duration-700"></div>
-              
-              <div className="relative z-10">
-                {/* Icon */}
-                <div className="w-16 h-16 bg-[#21b9ab]/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#21b9ab]/30 transition">
-                  <svg className="w-8 h-8 text-[#21b9ab]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                </div>
-
-                <h3 className="text-2xl font-bold mb-4">
-                  Operators Seeking Growth Capital
-                </h3>
-                
-                <p className="text-gray-400 mb-6 text-sm">
-                  (SBA, LOCs, business cards)
-                </p>
-
-                <button className="w-full bg-[#21b9ab] text-black px-6 py-4 rounded-full font-bold hover:bg-[#19968a] transition-all transform group-hover:scale-105">
-                  CONTACT US
-                </button>
-              </div>
-            </div>
-
-            {/* Card 3: CPAs/Attorneys/Bankers */}
-            <div 
-              className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800 hover:border-[#21b9ab] transition-all duration-500 relative overflow-hidden group"
-              onMouseEnter={() => setHoveredCard(3)}
-              onMouseLeave={() => setHoveredCard(0)}
-            >
-              {/* Background Accent */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#21b9ab]/10 rounded-full blur-3xl transform translate-x-32 -translate-y-32 group-hover:scale-150 transition-transform duration-700"></div>
-              
-              <div className="relative z-10">
-                {/* Icon */}
-                <div className="w-16 h-16 bg-[#21b9ab]/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#21b9ab]/30 transition">
-                  <svg className="w-8 h-8 text-[#21b9ab]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-
-                <h3 className="text-2xl font-bold mb-4">
-                  CPAs/attorneys/bankers with clients to refer
-                </h3>
-                
-                <p className="text-gray-400 mb-6 text-sm invisible">
-                  &nbsp;
-                </p>
-
-                <button className="w-full bg-[#21b9ab] text-black px-6 py-4 rounded-full font-bold hover:bg-[#19968a] transition-all transform group-hover:scale-105">
-                  CONTACT US
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Benefits Section */}
       <section className="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
@@ -201,9 +95,7 @@ export default function BecomeAffiliatePage() {
           <p className="text-xl text-gray-400 mb-8">
             Join our affiliate program today and start helping businesses while growing your income.
           </p>
-          <button className="bg-[#21b9ab] text-black px-12 py-5 rounded-full text-lg font-bold hover:bg-[#19968a] transition-all transform hover:scale-105 shadow-2xl">
-            BECOME AN AFFILIATE
-          </button>
+          
         </div>
       </section>
 
