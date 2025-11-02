@@ -82,9 +82,9 @@ const ChatbotWidget = () => {
       lowerMessage.includes("call") ||
       lowerMessage.includes("schedule")
     ) {
-      return "I'd be happy to schedule a call for you! You can book directly through our website or call us at (713) 555-1234. What's the best time for you?";
+      return "I'd be happy to schedule a call for you! You can book directly through our website or call us at (346) 550-5524. What's the best time for you?";
     } else {
-      return "I'd love to help you further! You can reach us at (713) 555-1234 or email us at info@pacconsulting.com. Would you like to schedule a free consultation?";
+      return "I'd love to help you further! You can reach us at (346) 550-5524 or email us at info@pacconsulting.com. Would you like to schedule a free consultation?";
     }
   };
 
