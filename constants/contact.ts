@@ -8,12 +8,12 @@ export const CONTACT_CARDS = [
     },
     {
         title: "Pac Consulting Address",
-        value: "Mumbai, India",
+        value: "Texas, USA",
         icon: MapPinIcon
     },
     {
         title: "Email Address",
-        value: "support@Pac Consulting.com",
+        value: "phill@pacconsults.com",
         icon: MailIcon
     }
 ] as const;
