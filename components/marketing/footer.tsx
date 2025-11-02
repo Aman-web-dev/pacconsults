@@ -32,7 +32,7 @@ const Footer = () => {
                             </p>
                             <div className="mt-4 text-sm text-muted-foreground px-4 py-2 cursor-pointer rounded-full border border-border/40 bg-foreground/5 hover:bg-foreground/10 transition-colors duration-300">
                                 <Link href="tel:+17135551234">
-                                    <p>+1 (713) 555-1234</p>
+                                    <p>+1 (346) 550-5524</p>
                                 </Link>
                             </div>
                         </div>
