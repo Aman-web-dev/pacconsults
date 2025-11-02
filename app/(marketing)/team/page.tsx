@@ -11,7 +11,7 @@ export default function TeamPage() {
       name: "Joana Mariano",
       role: "Administrative Assistant",
       bio: "20+ years of experience in business acquisitions and strategic growth",
-      image: "https://media.licdn.com/dms/image/v2/D5635AQHccpH6JP0lRA/profile-framedphoto-shrink_400_400/B56ZoN0Y2YI8Ac-/0/1761168428691?e=1762714800&v=beta&t=RdWU2ZuN5vhfDj2xaVJnud-skZQKU1aLfn4fXOhvxJ8",
+      image: "/images/team/1761168428691.jpeg",
       linkedin: "https://www.linkedin.com/in/joana-mariano-308049361/",
       email: "#"
     },
@@ -20,7 +20,7 @@ export default function TeamPage() {
       name: "Vanessa Beth Blanela",
       role: "Lead Generation Specialist",
       bio: "Expert in SBA loans and business financing with $100M+ funded",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQFz-ZPQ-351kA/profile-displayphoto-scale_400_400/B56ZmBoOfGJkAk-/0/1758816432126?e=1763596800&v=beta&t=7KehkFK7QIFuG4svC8_-HRmJgVyv3H4JR4XiRn4MnEk",
+      image: "/images/team/1758816432126.jpeg",
       linkedin: "https://www.linkedin.com/in/vanessa-beth-blanela-064565240/",
       email: "#"
     },
