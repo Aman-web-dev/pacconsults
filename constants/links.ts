@@ -12,10 +12,6 @@ export const NAV_LINKS = [
         link: "/products",
     },
     {
-        name: "Book a Call",
-        link: "/#contact",
-    },
-    {
         name: "Become an Affiliate",
         link: "/affiliate",
     },
@@ -56,10 +52,6 @@ export const RESOURCES_LINKS = [
     {
         label: "Products",
         href: "/products",
-    },
-    {
-        label: "Book a Call",
-        href: "/#contact",
     },
     {
         label: "Become an Affiliate",
