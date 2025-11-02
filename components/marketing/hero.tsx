@@ -67,8 +67,8 @@ const Hero = () => {
           <Container delay={0.2}>
             <p className="text-sm sm:text-base md:text-lg font-normal text-center text-balance text-muted-foreground max-w-3xl mx-auto mt-4 px-4 leading-relaxed">
               We help owners sell for maximum value and get the capital they
-              need to grow. 20+years experience • SBA & lender network •
-              $10M–$50M buyer relationships
+              need to grow. 10+years experience • SBA & lender network •
+              $10M–$100m buyer relationships
             </p>
           </Container>
 
@@ -102,7 +102,7 @@ const Hero = () => {
                         <div
                           className="absolute inset-0 bg-cover bg-center"
                           style={{
-                            backgroundImage: "url('/images/hero.png')",
+                            backgroundImage: "url('/images/hero2.webp')",
                             backgroundPosition: "center",
                             backgroundSize: "cover",
                           }}
@@ -116,7 +116,7 @@ const Hero = () => {
                           <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-3xl">
                             {/* Main Heading */}
                             <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-2 sm:mb-3 md:mb-4 lg:mb-6 leading-tight tracking-tight">
-                              I will Help You in
+                              I will Help You
                             </h1>
 
                             {/* Animated Text Container */}

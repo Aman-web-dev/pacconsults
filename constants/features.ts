@@ -1,38 +1,62 @@
 export const FEATURES = [
-    {
-        title: "BUSINESS FUNDING",
-        desc: "Unlock Growth Potential - Seamlessly secure the capital your business needs to scale. Our consulting expertise navigates the funding landscape to deliver personalized financial solutions that power your business objectives.",
-        icon: "/icons/pie.svg",
-        features: [
-            "Tailored Funding Strategies - Whether you're a startup in its infancy or an established enterprise seeking expansion, we design bespoke funding strategies that align with your unique business goals and facilitate sustained growth.",
-            "Streamlined Application Process - Bid farewell to daunting paperwork and complex procedures. Our team ensures a swift and simplified application process, increasing your chances of securing the optimal funding package with favorable terms."
-        ]
-    },
-    {
-        title: "CREDIT RESTORATION",
-        desc: "Repair and Revitalize - Elevate your financial reputation with our proven credit restoration services. We analyze your credit report with a fine-tooth comb to identify discrepancies and devise a robust action plan to enhance your credit score.",
-        icon: "/icons/computer.svg",
-        features: [
-            "Strategic Dispute Resolution - Dodge the setbacks of poor credit with strategic dispute interventions. Our team harnesses expert negotiation techniques to challenge and resolve inaccuracies on your credit report, thus paving the way for a cleaner financial slate.",
-            "Continuous Credit Education - Don't just repair, but maintain. Our service includes comprehensive guidance on credit best practices to empower you with the knowledge needed to sustain a healthy credit profile long after the restoration process."
-        ]
-    },
-    {
-        title: "SHELF CORPORATION STRUCTURING",
-        desc: "Instant Credibility Boost - Opt for a seasoned shelf corporation to instantly enhance your business credibility. With a pre-established corporate history, you'll gain access to more substantial business ventures and credit opportunities.",
-        icon: "/icons/label.svg",
-        features: [
-            "Navigate with Confidence - Our team of experts will guide you through the intricacies of shelf corporation structuring, ensuring compliance and alignment with your business plan and long-term objectives.",
-            "Customized Corporate Solutions - Not all shelf corporations are created equal. At PAC Consulting, we meticulously select and tailor corporations to fit your exact business needs, from age to industry relevance, positioning your enterprise on a trajectory toward success."
-        ]
-    },
-    {
-        title: "BUSINESS FORMATION & PLANNING",
-        desc: "Strategic Business Blueprint - Lay the foundation for your venture with our comprehensive business formation services. We guide you through every step, from choosing the right business structure to aligning it with your future vision, ensuring you're structured for success from day one.",
-        icon: "/icons/crown.svg",
-        features: [
-            "Bespoke Entity Selection - Navigate the complexities of entity types with ease. Whether it's an LLC, S-Corp, or C-Corp, our experts tailor the selection to best suit your tax position, liability preferences, and growth aspirations.",
-            "Forward-Thinking Business Roadmaps - Turn aspirations into reality with actionable plans. We craft detailed, forward-thinking business strategies that outline clear pathways for growth, risk mitigation, and long-term prosperity."
-        ]
-    },
+   {
+    title: "SELL-SIDE ADVISORY",
+    desc: "Maximize Your Exit - We help business owners craft compelling stories, protect confidentiality, attract multiple buyers, and structure deals that close successfully.",
+    icon: "/icons/handshake.svg",
+    features: [
+        "Comprehensive Valuation & Marketing - Position your business to achieve top market value with accurate valuation and targeted, confidential marketing.",
+        "Negotiation & Deal Structuring - We manage buyer outreach, negotiations, and deal terms including seller notes, earnouts, and SBA coordination for seamless closings."
+    ],
+    calendly: "https://calendly.com/pacconsulting/sell-side-advisory?back=1"
+},
+{
+    title: "BUY-SIDE ADVISORY",
+    desc: "Acquire Smartly - Identify, evaluate, and acquire the right businesses with our end-to-end advisory support. From due diligence to deal negotiation, we help you invest wisely.",
+    icon: "/icons/search.svg",
+    features: [
+        "Targeted Acquisition Search - Discover businesses aligned with your goals, budget, and industry preferences using our extensive network and research capabilities.",
+        "Financial & Operational Due Diligence - Make informed decisions with expert analysis of financials, operations, and market positioning before you commit."
+    ],
+    calendly: "https://calendly.com/pacconsulting/buy-side-advisory?back=1"
+},
+{
+    title: "BUSINESS CREDIT DEVELOPMENT",
+    desc: "Build Financial Leverage - Strengthen your business credit profile to unlock better funding opportunities and vendor relationships.",
+    icon: "/icons/credit.svg",
+    features: [
+        "Credit Building Strategy - Establish and grow your business credit score through structured vendor accounts and reporting systems.",
+        "Access to Business Credit Tools - Get personalized guidance and resources to monitor, manage, and improve your business credit effectively."
+    ],
+    calendly: "https://calendly.com/pacconsulting/business-credit-development?back=1"
+},
+{
+    title: "BUSINESS AUTOMATION & SYSTEMS",
+    desc: "Work Smarter, Not Harder - Transform your business operations through process automation and technology integration.",
+    icon: "/icons/automation.svg",
+    features: [
+        "Workflow Optimization - Identify bottlenecks and automate repetitive tasks to boost productivity and efficiency.",
+        "Tech Stack Integration - We help you choose and implement the right CRM, project management, and communication tools to streamline your business."
+    ],
+    calendly: "https://calendly.com/pacconsulting/business-automation?back=1"
+},
+{
+    title: "MARKETING STRATEGY & GROWTH",
+    desc: "Scale with Strategy - Unlock your business’s potential through tailored marketing strategies that drive leads, conversions, and long-term brand growth.",
+    icon: "/icons/megaphone.svg",
+    features: [
+        "Brand Positioning & Messaging - Define your unique value proposition and craft a brand story that resonates with your audience.",
+        "Performance Marketing Execution - Leverage digital campaigns, analytics, and automation to maximize ROI and sustain growth."
+    ],
+    calendly: "https://calendly.com/pacconsulting/marketing-strategy?back=1"
+},
+{
+    title: "EXIT PLANNING & SUCCESSION",
+    desc: "Plan Your Legacy - Prepare your business for a successful transition. Whether you're selling, passing it on, or stepping back, we help you design a smooth and profitable exit strategy.",
+    icon: "/icons/exit.svg",
+    features: [
+        "Comprehensive Exit Strategy - Evaluate timing, valuation, and structure to maximize return while minimizing tax and transition risks.",
+        "Succession & Continuity Planning - Ensure leadership continuity and business stability with tailored succession frameworks for owners and key executives."
+    ],
+    calendly: "https://calendly.com/pacconsulting/exit-planning?back=1"
+}
 ];

@@ -1,7 +1,7 @@
 export const STATS = [
     {
         title: "Years of Experience",
-        value: "20+",
+        value: "10+",
         icon: "/icons/clock.svg"
     },
     {
@@ -16,12 +16,12 @@ export const STATS = [
     },
     {
         title: "Funding Secured",
-        value: "$100M+",
+        value: "$500M+",
         icon: "/icons/pie.svg"
     },
     {
-        title: "Nationwide Coverage",
-        value: "50 States",
+        title: "Coverage",
+        value: "Worldwide",
         icon: "/icons/computer.svg"
     },
     {

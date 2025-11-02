@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from "@/components/ui/button";
 import Container from "../global/container";
 import Wrapper from "../global/wrapper";
 import { FEATURES } from "@/constants";
@@ -27,6 +28,7 @@ const Features = () => {
                                 title={feature.title}
                                 desc={feature.desc}
                                 icon={feature.icon}
+                                calendly={feature.calendly}
                             />
                         ))}
                     </div>
@@ -39,11 +41,13 @@ const Features = () => {
 const Feature = ({
     title,
     desc,
-    icon
+    icon,
+    calendly
 }: {
     title: string;
     desc: string;
     icon: string;
+    calendly: string;
 }) => {
     return (
         <div className="flex flex-col p-4 lg:p-6 border border-border/60 rounded-lg lg:rounded-xl hover:border-primary transition-all duration-300 ease-out">
@@ -60,6 +64,11 @@ const Feature = ({
             <p className="text-sm text-muted-foreground mt-1">
                 {desc}
             </p>
+            <a href={calendly} target="_blank" rel="noopener noreferrer">
+                <Button className="w-full mt-4">
+                    Book a Call
+                </Button>
+            </a>
         </div>
     )
 };

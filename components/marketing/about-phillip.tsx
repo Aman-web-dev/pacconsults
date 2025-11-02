@@ -24,7 +24,10 @@ const AboutPhillip = () => {
                     </Container>
                     
                     <Container delay={0.1}>
-                        <div className="space-y-6">
+                        <div className="">
+                            <h2 className="text-xl md:text-2xl font-bold text-[#51e0cf]">
+                                CEO
+                            </h2>
                             <h2 className="text-4xl md:text-5xl font-bold">
                                 I'M Phillip.
                             </h2>

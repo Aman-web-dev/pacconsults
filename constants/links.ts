@@ -24,8 +24,9 @@ export const NAV_LINKS = [
         link: "/about",
     },
     {
-        name: "Contact us",
-        link: "/contact",
+        name: "Join Our Community",
+        link: "https://www.skool.com/investtofreedomacademy/about",
+        target:"_blank",
     },
      {
         name: "Blogs",
@@ -37,7 +38,6 @@ export const PRODUCT_LINKS = [
     { label: "About", href: "/about" },
     { label: "Integrations", href: "/integrations" },
     { label: "Pricing", href: "/pricing" },
-    { label: "Demo", href: "/contact" },
 ];
 
 export const RESOURCES_LINKS = [
@@ -65,13 +65,8 @@ export const RESOURCES_LINKS = [
         label: "About us",
         href: "/about",
     },
-    {
-        label: "Contact us",
-        href: "/contact",
-    },
      {
         label: "Blogs",
         href: "/blogs",
     },
 ];
-

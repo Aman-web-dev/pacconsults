@@ -17,7 +17,7 @@ const HomePage = () => {
     return (
         <div className="w-full relative flex flex-col">
             <Hero />
-            <ContactFormHero />
+            {/* <ContactFormHero /> */}
             <WhoWeHelp />
             <ServicesOverview />
             <Features />

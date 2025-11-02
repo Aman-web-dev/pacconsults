@@ -44,7 +44,7 @@ export default function BecomeAffiliatePage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Card 1: Owners Ready to Sell */}
+            {/* Card 1: Business Owners Ready to Sell */}
             <div 
               className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800 hover:border-[#21b9ab] transition-all duration-500 relative overflow-hidden group"
               onMouseEnter={() => setHoveredCard(1)}
@@ -62,7 +62,7 @@ export default function BecomeAffiliatePage() {
                 </div>
 
                 <h3 className="text-2xl font-bold mb-4">
-                  Owners Ready to sell
+                  Business Owners Ready to Sell
                 </h3>
                 
                 <p className="text-gray-400 mb-6 text-sm">
@@ -167,7 +167,7 @@ export default function BecomeAffiliatePage() {
                   <div className="text-[#21b9ab] text-3xl mt-1">✓</div>
                   <div>
                     <h4 className="text-xl font-bold mb-2">Trusted Expertise</h4>
-                    <p className="text-gray-400">20+ years of experience helping businesses succeed</p>
+                    <p className="text-gray-400">10+ years of experience helping businesses succeed</p>
                   </div>
                 </div>
                 
@@ -212,11 +212,11 @@ export default function BecomeAffiliatePage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="bg-black/50 p-8 rounded-2xl border border-gray-800">
-              <div className="text-5xl font-bold text-[#21b9ab] mb-2">20+</div>
+              <div className="text-5xl font-bold text-[#21b9ab] mb-2">10+</div>
               <p className="text-gray-400">Years of Experience</p>
             </div>
             <div className="bg-black/50 p-8 rounded-2xl border border-gray-800">
-              <div className="text-5xl font-bold text-[#21b9ab] mb-2">$10M-$50M</div>
+              <div className="text-5xl font-bold text-[#21b9ab] mb-2">$10M-$100m</div>
               <p className="text-gray-400">Buyer Relationships</p>
             </div>
             <div className="bg-black/50 p-8 rounded-2xl border border-gray-800">

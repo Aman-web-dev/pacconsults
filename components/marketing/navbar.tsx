@@ -55,6 +55,7 @@ const Navbar = () => {
                 <div className="relative">
                   <Link
                     href={link.link}
+                    target={link.target}
                     className="hover:text-foreground transition-all duration-500 px-1.5"
                   >
                     {link.name}
@@ -67,11 +68,6 @@ const Navbar = () => {
 
         <Container animation="fadeLeft" delay={0.1}>
           <div className="flex items-center gap-x-4">
-            <Link href="/contact" className="hidden lg:block">
-              <Button size="sm" variant="outline">
-                Contact Sales
-              </Button>
-            </Link>
             <div className="lg:hidden">
               <MobileMenu />
             </div>

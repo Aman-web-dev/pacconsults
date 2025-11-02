@@ -5,7 +5,7 @@ export const FAQS = [
     },
     {
         question: "What types of businesses do you work with?",
-        answer: "We work with a wide range of businesses including home service companies (HVAC, plumbing, remodeling, construction, landscaping), laundromats, car washes, SaaS platforms, and many other industries. Our expertise spans businesses with revenues from $1M to $50M+.",
+        answer: "We work with a wide range of businesses including home service companies (HVAC, plumbing, remodeling, construction, landscaping), laundromats, car washes, SaaS platforms, and many other industries. Our expertise spans businesses with revenues from $1M to $500M+.",
     },
     {
         question: "What is the 'Invest Forward' concept?",

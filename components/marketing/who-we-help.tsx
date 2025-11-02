@@ -42,9 +42,11 @@ const WhoWeHelp = () => {
                                     {item.description}
                                 </p>
                                 
+                                <a href={item.ctaLink} target="_blank" rel="noopener noreferrer">
                                 <Button className="w-full">
-                                    {item.cta}
+                                    Book a Call
                                 </Button>
+                                </a>
                             </div>
                         </Container>
                     ))}

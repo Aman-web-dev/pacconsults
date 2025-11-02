@@ -8,25 +8,27 @@ const ServicesOverview = () => {
     const services = [
         {
             title: "Sell-Side Advisory",
-            description: "Package the story, protect confidentiality, drive competition, and structure deals that close.",
+            description: "We help you package your business story, maintain confidentiality, create buyer competition, and structure deals that close successfully.",
             features: [
                 "Valuation & confidential marketing",
                 "Buyer outreach & negotiation", 
                 "Seller notes, earnouts, SBA coordination"
             ],
             cta: "GET A FREE VALUATION",
-            image: "/images/sell-side-advisory.webp"
+            image: "/images/sell-side-advisory.webp",
+            calendly: "https://calendly.com/pacconsulting/investororsellerdiscoverycall?back=1"
         },
         {
             title: "Business Funding",
-            description: "Prep that gets approvals. Relationships that move faster.",
+            description: "Get funding faster with expert prep, strong lender relationships, and strategic packaging.",
             features: [
                 "SBA packaging and lender matching",
                 "Lines of credit & business cards",
                 "Bank + fintech network"
             ],
             cta: "CHECK FUNDING OPTIONS",
-            image: "/images/business-plan.webp"
+            image: "/images/business-plan.webp",
+            calendly: "https://calendly.com/pacconsulting/personal-business-funding?back=1"
         }
     ];
 
@@ -78,6 +80,11 @@ const ServicesOverview = () => {
                                 <Button className="w-full">
                                     {service.cta}
                                 </Button>
+                                <a href={service.calendly} target="_blank" rel="noopener noreferrer">
+                                <Button className="w-full mt-4">
+                                    Book a Call
+                                </Button>
+                                </a>
                             </div>
                         </Container>
                     ))}

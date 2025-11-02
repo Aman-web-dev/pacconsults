@@ -69,7 +69,7 @@ const ChatbotWidget = () => {
         if (lowerMessage.includes('sale') || lowerMessage.includes('sell')) {
             return "Great! I can help you with selling your business. We specialize in maximizing value for home service businesses, laundromats, car washes, and SaaS platforms. Would you like to schedule a free consultation?";
         } else if (lowerMessage.includes('funding') || lowerMessage.includes('capital')) {
-            return "Perfect! We offer various funding solutions including SBA loans, business credit cards, and lines of credit. Our team has secured over $100M+ in funding. What type of funding are you looking for?";
+            return "Perfect! We offer various funding solutions including SBA loans, business credit cards, and lines of credit. Our team has secured over $500M+ in funding. What type of funding are you looking for?";
         } else if (lowerMessage.includes('credit')) {
             return "We provide comprehensive credit restoration services. Our team has helped clients improve their credit scores significantly. Would you like to learn more about our credit repair process?";
         } else if (lowerMessage.includes('call') || lowerMessage.includes('schedule')) {
