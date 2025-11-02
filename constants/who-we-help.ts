@@ -1,21 +1,21 @@
 export const WHO_WE_HELP = [
     {
         title: "Business Owners Ready to Sell",
-        description: "Home Service Based (HVAC, Plumbing, Remodeling and Construction, Landscaping.. etc, Laundromats, Car washes, SaaS Platforms and so on)",
+        description: "Business Lines of Credit – Draw funds as needed to manage cash flow or expand operations",
         image: "/images/seller.png",
         cta: "CONTACT US",
         ctaLink: "https://calendly.com/pacconsulting/investororsellerdiscoverycall?back=1"
     },
     {
         title: "Operators Seeking Growth Capital",
-        description: "Access 0% interest business credit cards to fund expansion and scale operations efficiently.",
+        description: "0% Interest Business Credit Cards – Perfect for startups and short-term working capital.",
         image: "/images/creditlender.png",
         cta: "CONTACT US",
         ctaLink: "https://calendly.com/pacconsulting/personal-business-funding?back=1"
     },
     {
         title: "CPAs/Attorneys/Bankers with Clients to Refer",
-        description: "I’m Phillip Crawford — your trusted partner for business consulting and brokerage services.",
+        description: "Revenue-Based Lending – Fast funding based on your company’s monthly sales performance.",
         image: "/images/attorney.png",
         cta: "CONTACT US",
         ctaLink: "https://calendly.com/pacconsulting/30-minute-consultation-clone?back=1"
