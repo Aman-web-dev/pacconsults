@@ -32,6 +32,10 @@ export const NAV_LINKS = [
         name: "Blogs",
         link: "/blogs",
     },
+    {
+        name: "Team",
+        link: "/team",
+    }
 ];
 
 export const PRODUCT_LINKS = [

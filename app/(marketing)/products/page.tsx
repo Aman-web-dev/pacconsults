@@ -22,7 +22,7 @@ export default function BookProductPage() {
           </div>
           
           <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
-            PHILLIP BOOK
+            Children's financial literacy Book
           </h1>
           
           <p className="text-xl text-gray-400 max-w-4xl mx-auto mb-8 leading-relaxed">
@@ -92,9 +92,9 @@ export default function BookProductPage() {
                   <p className="text-xl font-semibold mb-4 flex items-center gap-2">
                     📘 Available Now — Empower the next generation of wealth builders!
                   </p>
-                  <button className="bg-black text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-gray-900 transition-all transform hover:scale-105 shadow-xl">
+                  <a target='_blank' href='https://www.amazon.com/Mekhai-Hayleys-Big-Adventure-Building-ebook/dp/B0DNCWJWTW?ref_=ast_author_mpb' className="bg-black text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-gray-900 transition-all transform hover:scale-105 shadow-xl">
                     BUY NOW
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -145,9 +145,12 @@ export default function BookProductPage() {
           <p className="text-xl text-gray-400 mb-8">
             Give your child the gift of financial literacy today
           </p>
-          <button className="bg-[#21b9ab] text-black px-12 py-5 rounded-full text-lg font-bold hover:bg-[#19968a] transition-all transform hover:scale-105 shadow-2xl">
+          <a target="_blank" href='https://calendly.com/pacconsulting'>
+<button className="bg-[#21b9ab] text-black px-12 py-5 rounded-full text-lg font-bold hover:bg-[#19968a] transition-all transform hover:scale-105 shadow-2xl">
             BOOK A CALL
           </button>
+          </a>
+          
         </div>
       </section>
     </div>

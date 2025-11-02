@@ -14,7 +14,7 @@ const ServicesOverview = () => {
                 "Buyer outreach & negotiation", 
                 "Seller notes, earnouts, SBA coordination"
             ],
-            cta: "GET A FREE VALUATION",
+            
             image: "/images/sell-side-advisory.webp",
             calendly: "https://calendly.com/pacconsulting/investororsellerdiscoverycall?back=1"
         },
@@ -26,7 +26,7 @@ const ServicesOverview = () => {
                 "Lines of credit & business cards",
                 "Bank + fintech network"
             ],
-            cta: "CHECK FUNDING OPTIONS",
+            
             image: "/images/business-plan.webp",
             calendly: "https://calendly.com/pacconsulting/personal-business-funding?back=1"
         }
@@ -77,9 +77,7 @@ const ServicesOverview = () => {
                                     ))}
                                 </ul>
                                 
-                                <Button className="w-full">
-                                    {service.cta}
-                                </Button>
+                              
                                 <a href={service.calendly} target="_blank" rel="noopener noreferrer">
                                 <Button className="w-full mt-4">
                                     Book a Call

@@ -35,13 +35,13 @@ const Hero = () => {
     <div className="relative z-0 w-full h-full overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute -top-16 inset-x-0 -z-10 mx-auto w-3/4 h-32 lg:h-40 rounded-full blur-[5rem] bg-[radial-gradient(86.02%_172.05%_at_50%_-40%,rgba(18,139,135,1)_0%,rgba(5,5,5,0)_80%)]"></div>
-         <Image
-                src="/images/hero.svg"
-                alt=""
-                width={1024}
-                height={1024}
-                className="absolute inset-x-0 -top-32 w-full z-10 min-w-full"
-            />
+      <Image
+        src="/images/hero.svg"
+        alt=""
+        width={1024}
+        height={1024}
+        className="absolute inset-x-0 -top-32 w-full z-10 min-w-full"
+      />
 
       <Wrapper className="py-12 md:py-20">
         <div className="flex flex-col items-center justify-center w-full z-10">
@@ -75,9 +75,14 @@ const Hero = () => {
           {/* CTA Button */}
           <Container delay={0.3}>
             <div className="mt-6 md:mt-8">
-              <Button size="md" className="text-sm sm:text-base">
-                BOOK A CALL
-              </Button>
+              <a
+                target="_blank"
+                href="https://calendly.com/pacconsulting/investororsellerdiscoverycall?back=1"
+              >
+                <Button size="md" className="text-sm sm:text-base">
+                  BOOK A CALL
+                </Button>
+              </a>
             </div>
           </Container>
 
@@ -94,8 +99,8 @@ const Hero = () => {
                       {/* Aspect ratio container - 16:9 on desktop, taller on mobile */}
                       <div
                         className="relative w-full"
-                        style={{ 
-                          paddingBottom: "clamp(75%, 16vw + 40%, 56.25%)" 
+                        style={{
+                          paddingBottom: "clamp(75%, 16vw + 40%, 56.25%)",
                         }}
                       >
                         {/* Background Image */}
@@ -145,6 +150,7 @@ const Hero = () => {
                             </div>
 
                             {/* CTA Button */}
+                            <a target="_blank" href="https://calendly.com/pacconsulting/investororsellerdiscoverycall?back=1"> 
                             <button
                               className="px-4 xs:px-5 sm:px-6 md:px-8 py-2 xs:py-2.5 sm:py-3 md:py-4 rounded-full font-semibold text-xs xs:text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95 mt-2 sm:mt-4 md:mt-8 lg:mt-16"
                               style={{
@@ -155,6 +161,7 @@ const Hero = () => {
                             >
                               Schedule a Call
                             </button>
+                            </a>
 
                             {/* Accent Line */}
                             <div
