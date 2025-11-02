@@ -146,30 +146,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Join Our Team Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-gradient-to-br from-[#21b9ab] to-[#19968a] rounded-3xl p-12 md:p-16 text-center relative overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-              <div className="absolute bottom-0 right-0 w-64 h-64 bg-black rounded-full blur-3xl"></div>
-            </div>
-            
-            <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
-                Join Our Team
-              </h2>
-              <p className="text-xl text-black/80 mb-8 max-w-2xl mx-auto">
-                We're always looking for talented individuals who are passionate about helping businesses succeed.
-              </p>
-              <button className="bg-black text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-900 transition-all transform hover:scale-105 shadow-xl">
-                View Open Positions
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Values Section */}
       <section className="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
