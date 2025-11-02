@@ -68,7 +68,7 @@ const Hero = () => {
             <p className="text-sm sm:text-base md:text-lg font-normal text-center text-balance text-muted-foreground max-w-3xl mx-auto mt-4 px-4 leading-relaxed">
               We help owners sell for maximum value and get the capital they
               need to grow. 10+years experience • SBA & lender network •
-              $10M–$100m buyer relationships
+              $50K–$1M buyer relationships
             </p>
           </Container>
 

@@ -108,7 +108,7 @@ export default function BecomeAffiliatePage() {
               <p className="text-gray-400">Years of Experience</p>
             </div>
             <div className="bg-black/50 p-8 rounded-2xl border border-gray-800">
-              <div className="text-5xl font-bold text-[#21b9ab] mb-2">$10M-$100m</div>
+              <div className="text-5xl font-bold text-[#21b9ab] mb-2">$50K-$1M</div>
               <p className="text-gray-400">Buyer Relationships</p>
             </div>
             <div className="bg-black/50 p-8 rounded-2xl border border-gray-800">
