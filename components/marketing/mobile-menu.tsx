@@ -26,13 +26,13 @@ const MobileMenu = () => {
                             </Link>
                         </SheetClose>
                     ))}
-                    <SheetClose asChild>
+                    {/* <SheetClose asChild>
                         <Link href="/contact" className="w-full mt-4">
                             <Button size="lg" variant="outline" className="w-full">
                                 Contact Sales
                             </Button>
                         </Link>
-                    </SheetClose>
+                    </SheetClose> */}
                 </div>
             </SheetContent>
         </Sheet>
