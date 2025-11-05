@@ -11,10 +11,12 @@ import Stats from "@/components/marketing/stats";
 import Footer from "@/components/marketing/footer";
 import ChatbotWidget from "@/components/marketing/chatbot-widget";
 import ServicesOverview from "@/components/marketing/services-overview";
+import { ConsentForm } from "@/components/marketing/consent-form";
 
 const HomePage = () => {
     return (
         <div className="w-full relative flex flex-col">
+            <ConsentForm />
             <Hero />
             {/* <ContactFormHero /> */}
             <WhoWeHelp />
