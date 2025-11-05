@@ -197,8 +197,7 @@ export function ConsentForm() {
               </div>
 
               <p className="text-xs text-center text-gray-500 pt-2">
-                By subscribing, you agree to receive updates and promotional content. 
-                You can unsubscribe at any time.
+                By Subscribing, you agree to receive recurring SMS messages from Pacconsults at the number provided. Message & data rates may apply. Message frequency varies. Reply STOP to cancel, HELP for help. Consent is not a condition of purchase. I have read and agree to the Terms and Privacy Policy.
               </p>
             </form>
           </Form>
