@@ -6,17 +6,18 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { remark } from 'remark';
 import html from 'remark-html';
-import { Metadata } from 'next'; // Import Metadata type
+import { Metadata } from 'next';
 
 // Minimal Blog type for stronger typing in this file
 type Blog = {
   id: string;
   title: string;
-  description: string; // Ensure description is available for metadata
-  content: string; // This is now Markdown content
+  description: string;
+  content: string;
   image_url?: string | null;
   created_at?: string | null;
   status: "published" | "draft";
+  author?: string;
   [key: string]: any;
 };
 
@@ -29,13 +30,15 @@ async function markdownToHtml(markdown: string) {
 // Set revalidation time for dynamic pages (e.g., 24 hours)
 export const revalidate = 86400; 
 
-// SEO FIX 1: Implement generateMetadata for dynamic SEO
-type WorkaroundPageProps = {
-  params: { id: string }; // Use plain object for params type here
+// FIX: In Next.js 15, params is now a Promise
+type BlogPageProps = {
+  params: Promise<{ id: string }>; 
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata({ params }: WorkaroundPageProps): Promise<Metadata> {
-  const { id } = params;
+// FIX: Await params in generateMetadata
+export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
+  const { id } = await params; 
   const blog = await getBlogById(id);
 
   if (!blog) {
@@ -44,7 +47,7 @@ export async function generateMetadata({ params }: WorkaroundPageProps): Promise
 
   const title = blog.title;
   const description = blog.description;
-  const imageUrl = blog.image_url || '/placeholder-blog-image.jpg'; // Use a fallback image
+  const imageUrl = blog.image_url || '/placeholder-blog-image.jpg'; 
 
   return {
     title: title,
@@ -84,7 +87,7 @@ export async function generateStaticParams(): Promise<{ id: string }[]> {
 async function getBlogById(id: string) {
   const { data: blog, error } = await supabase
     .from('blogs')
-    .select('*, description') // Ensure description is selected
+    .select('*, description')
     .eq('id', id)
     .eq('status', "published")
     .single();
@@ -96,45 +99,49 @@ async function getBlogById(id: string) {
   return blog as Blog | null;
 }
 
-
-export default async function BlogDetailPage({ params }: WorkaroundPageProps) {
-  const { id } = params;
+// FIX: Await params in the main component
+export default async function BlogDetailPage({ params }: BlogPageProps) {
+  const { id } = await params; 
   const blog = await getBlogById(id);
 
   if (!blog) {
     notFound();
   }
 
-  // **CRITICAL FIX:** Convert Markdown content to HTML on the server
   const contentHtml = await markdownToHtml(blog.content);
+
+  // Separate conditional image rendering with updated colors
+  const blogImage = blog.image_url ? (
+      <div className="relative w-full h-80 mb-8 rounded-lg overflow-hidden">
+        <Image
+          src={blog.image_url}
+          alt={blog.title}
+          fill={true} 
+          style={{ objectFit: 'cover' }} 
+          className="rounded-lg"
+          sizes="(max-width: 768px) 100vw, 700px" 
+          priority 
+        />
+      </div>
+    ) : null;
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-3xl">
-      <article className="bg-white rounded-lg shadow-xl p-8">
-        {blog.image_url && (
-          <div className="relative w-full h-80 mb-8 rounded-lg overflow-hidden">
-            <Image
-              src={blog.image_url}
-              alt={blog.title}
-              fill={true} 
-              style={{ objectFit: 'cover' }} 
-              className="rounded-lg"
-              sizes="(max-width: 768px) 100vw, 700px" // SEO/Performance: Add sizes prop
-              priority // SEO: Mark as priority image
-            />
-          </div>
-        )}
-        <h1 className="text-5xl font-extrabold text-gray-900 mb-4 leading-tight">{blog.title}</h1>
+      <article className="bg-white rounded-lg shadow-xl p-8 border-t-4 border-[#35cfa2]">
+        {blogImage} 
+
+        <h1 className="text-5xl font-extrabold text-black mb-4 leading-tight">{blog.title}</h1>
         <p className="text-gray-600 text-lg mb-8">
           Published on {blog?.created_at ? new Date(blog.created_at).toLocaleDateString() : 'Unknown date'}
         </p>
-        {/* SEO FIX 2: Use a clean div and dangerouslySetInnerHTML */}
+
         <div 
-          className="prose prose-lg max-w-none text-gray-800 leading-relaxed"
+          className="prose prose-lg max-w-none text-gray-800 leading-relaxed prose-headings:text-black prose-a:text-[#35cfa2] prose-a:no-underline hover:prose-a:underline prose-strong:text-black"
           dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
       </article>
-      {/* SEO FIX 3: Add a structured data script (Schema.org Article) */}
+
+      {/* Schema.org Article */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -151,7 +158,7 @@ export default async function BlogDetailPage({ params }: WorkaroundPageProps) {
             "datePublished": blog.created_at,
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": `https://yourdomain.com/blogs/${blog.id}` // REPLACE WITH YOUR DOMAIN
+              "@id": `https://yourdomain.com/blogs/${blog.id}`
             }
           })
         }}
