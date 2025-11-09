@@ -1,7 +1,7 @@
 import React from 'react'
 import Wrapper from "../global/wrapper"
 import Container from "../global/container"
-import { BLOGS } from "@/constants"
+// Removed unused BLOGS import
 import Image from "next/image"
 import Link from "next/link"
 
@@ -20,18 +20,24 @@ const BlogSection = ({blogs}:{blogs:any}) => {
                 <div className="w-full mt-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                         {blogs.map((blog:any, index:any) => (
-                            <Container key={index}>
+                            // Removed <Container> wrapper around the card as it adds unnecessary padding inside the grid item
+                            <div key={index}> 
                                 <Link
                                     href={`/blogs/${blog.id}`}
                                     className="flex flex-col w-full group"
                                 >
-                                    <div className="relative w-full bg-foreground/5 border border-border/20 rounded-lg lg:rounded-xl overflow-hidden">
+                                    {/* FIX 1: Set a fixed, consistent height for the image container */}
+                                    <div className="relative w-full h-60 md:h-52 lg:h-64 bg-foreground/5 border border-border/20 rounded-lg lg:rounded-xl overflow-hidden">
                                         <Image
                                             src={blog.image_url||"/images/blog2.svg"}
                                             alt={blog.title}
-                                            width={1024}
-                                            height={1024}
-                                            className="object-contain size-full rounded-lg lg:rounded-xl transition-transform duration-300 group-hover:scale-105"
+                                            // FIX 2: Use the `fill` prop to make the image take up the container size
+                                            fill={true} 
+                                            // Removed width and height props when using fill
+                                            // FIX 3: Use object-cover and style for filling/cropping
+                                            style={{ objectFit: 'cover' }} 
+                                            className="rounded-lg lg:rounded-xl transition-transform duration-300 group-hover:scale-105"
+                                            sizes="(max-width: 768px) 100vw, 50vw"
                                         />
                                     </div>
                                     <div className="flex flex-col mt-4">
@@ -41,12 +47,12 @@ const BlogSection = ({blogs}:{blogs:any}) => {
                                         <h3 className="text-lg lg:text-xl font-semibold mt-2">
                                             {blog.title}
                                         </h3>
-                                        <p className="text-muted-foreground text-sm mt-1">
+                                        <p className="text-muted-foreground text-sm mt-1 line-clamp-2">
                                             {blog.description}
                                         </p>
                                     </div>
                                 </Link>
-                            </Container>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -55,4 +61,4 @@ const BlogSection = ({blogs}:{blogs:any}) => {
     )
 }
 
-export default BlogSection 
+export default BlogSection

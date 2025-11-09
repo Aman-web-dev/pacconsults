@@ -20,13 +20,13 @@ const BlogHero = () => {
 
                     <Container delay={0.1}>
                         <h2 className="text-balance !leading-[1.25] text-center text-4xl md:text-6xl font-semibold tracking-tight mt-6 w-full">
-                            Pac Consulting Blog: <br className="hidden lg:inline-block" /> Build Pages With Pac Consulting
+                            Pac Consulting Blog: <br className="hidden lg:inline-block" /> 
                         </h2>
                     </Container>
 
                     <Container delay={0.2}>
                         <p className="text-base md:text-lg font-normal text-center text-balance text-muted-foreground max-w-3xl mx-auto mt-4">
-                            Discover insights, tutorials, and best practices for building modern web applications with Pac Consulting
+                            Discover insights, tutorials, and best practices for building best portfolios businesses.
                         </p>
                     </Container>
                 </div>
