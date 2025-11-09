@@ -1,6 +1,4 @@
-// app/(admin)/blogs/page.tsx
-// This page allows authenticated administrators to manage all blog posts (published and drafts).
-
+// ============================================
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -21,6 +19,10 @@ import {
   AlertDialogTrigger,
 } from '../../../components/ui/alert-dialog';
 
+
+import { GenerateBlogsDialog } from '@/components/generate-blogs';
+
+
 interface Blog {
   id: string;
   title: string;
@@ -28,6 +30,7 @@ interface Blog {
   author: string;
   status: 'draft' | 'published';
   created_at: string;
+  category: string;
 }
 
 export default function AdminBlogsPage() {
@@ -41,7 +44,6 @@ export default function AdminBlogsPage() {
 
   const fetchBlogs = async () => {
     setLoading(true);
-    // Fetch all blogs for admin view, regardless of status
     const { data, error } = await supabase
       .from('blogs')
       .select('*')
@@ -65,7 +67,7 @@ export default function AdminBlogsPage() {
     if (error) {
       setError(error.message);
     } else {
-      fetchBlogs(); // Refresh the list
+      fetchBlogs();
     }
   };
 
@@ -80,20 +82,27 @@ export default function AdminBlogsPage() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold ">Blog Management</h1>
-        <Link href="/admin/blogs/new" passHref>
-          <Button>Create New Blog</Button>
-        </Link>
+        <h1 className="text-3xl font-bold">Blog Management</h1>
+        <div className="flex gap-2">
+          <GenerateBlogsDialog />
+          <Link href="/admin/blogs/new" passHref>
+            <Button variant="outline">Create New Blog</Button>
+          </Link>
+        </div>
       </div>
 
       {blogs.length === 0 ? (
-        <p className="text-lg text-gray-600">No blogs found. Create one to get started!</p>
+        <div className="text-center py-12 bg-gray-50 rounded-lg">
+          <p className="text-lg text-gray-600 mb-4">No blogs found.</p>
+          <p className="text-sm text-gray-500">Create one manually or use AI to generate multiple blogs at once!</p>
+        </div>
       ) : (
         <div className="rounded-md border">
           <Table>
             <TableHeader>
               <TableRow>
                 <TableHead>Title</TableHead>
+                <TableHead>Category</TableHead>
                 <TableHead>Author</TableHead>
                 <TableHead>Status</TableHead>
                 <TableHead>Created At</TableHead>
@@ -104,6 +113,7 @@ export default function AdminBlogsPage() {
               {blogs.map((blog) => (
                 <TableRow key={blog.id}>
                   <TableCell className="font-medium">{blog.title}</TableCell>
+                  <TableCell>{blog.category || '-'}</TableCell>
                   <TableCell>{blog.author}</TableCell>
                   <TableCell>
                     <Badge variant={blog.status === 'published' ? 'default' : 'secondary'}>

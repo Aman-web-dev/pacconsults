@@ -1,17 +1,25 @@
 import { supabase } from '@/lib/supabaseClient';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import { remark } from 'remark';
+import html from 'remark-html';
 
 // Minimal Blog type for stronger typing in this file
 type Blog = {
   id: string;
   title: string;
-  content: string;
+  content: string; // This is now Markdown content
   image_url?: string | null;
   created_at?: string | null;
   status: "published" | "draft";
   [key: string]: any;
 };
+
+// Function to convert Markdown to HTML (server-side utility)
+async function markdownToHtml(markdown: string) {
+  const result = await remark().use(html).process(markdown);
+  return result.toString();
+}
 
 // This function generates static paths for individual blog posts
 export async function generateStaticParams(): Promise<{ id: string }[]> {
@@ -61,6 +69,9 @@ export default async function BlogDetailPage(props: WorkaroundPageProps) {
     notFound();
   }
 
+  // **CRITICAL FIX:** Convert Markdown content to HTML on the server
+  const contentHtml = await markdownToHtml(blog.content);
+
   return (
     <div className="container mx-auto px-4 py-8 max-w-3xl">
       <article className="bg-white rounded-lg shadow-xl p-8">
@@ -69,8 +80,11 @@ export default async function BlogDetailPage(props: WorkaroundPageProps) {
             <Image
               src={blog.image_url}
               alt={blog.title}
-              layout="fill"
-              objectFit="cover"
+              // The next two props are deprecated. Use `fill` for next-gen Image component
+              // layout="fill" 
+              // objectFit="cover"
+              fill={true} // Use fill prop instead of layout="fill"
+              style={{ objectFit: 'cover' }} // Move object-fit to style prop
               className="rounded-lg"
             />
           </div>
@@ -79,10 +93,11 @@ export default async function BlogDetailPage(props: WorkaroundPageProps) {
         <p className="text-gray-600 text-lg mb-8">
           Published on {blog?.created_at ? new Date(blog.created_at).toLocaleDateString() : 'Unknown date'}
         </p>
-        <div className="prose prose-lg max-w-none text-gray-800 leading-relaxed">
-          <p>{blog.content}</p>
-          {/* In a real application, you might parse markdown content here */}
-        </div>
+        <div 
+          className="prose prose-lg max-w-none text-gray-800 leading-relaxed"
+          // **CRITICAL FIX:** Render the Markdown content as raw HTML
+          dangerouslySetInnerHTML={{ __html: contentHtml }}
+        />
       </article>
     </div>
   );

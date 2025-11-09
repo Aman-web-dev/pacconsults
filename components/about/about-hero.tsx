@@ -106,6 +106,9 @@ const AboutHero = () => {
             </div>
 
             <div>
+               <h2 className="text-xl md:text-2xl font-bold text-[#51e0cf]">
+                Founder & CEO
+              </h2>
               <h3 className="text-3xl md:text-4xl font-semibold mb-4 text-white">
                 Hello! I'm Phillip Crawford 👋
               </h3>
